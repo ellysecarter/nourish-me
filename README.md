@@ -28,7 +28,7 @@ None known
 * Dimitrius M. Brown https://github.com/TheMagnificentDOMB
 * Ellyse Carter https://github.com/ellysecarter 
 * Sean Hool https://github.com/HoolSeanalan 
-* Josue Santos-Aguilera
+* Josue Santos-Aguilera https://github.com/ok-josue/ 
 
 
 ![screenshot](assets/images/screenshot.png)
