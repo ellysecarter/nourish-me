@@ -9,7 +9,7 @@ function setLink(id) {
     });
 }
 
-//sets ElementById("ingredients") to the recipe's ingredients seperated by <br>s
+//sets ElementById("ingredients") to the recipe's ingredients separated by <br>s
 function setIngredients(id) {
     $.ajax({
         url:"https://api.spoonacular.com/recipes/"+id+"/information?apiKey=66f53e7e0ca942c9806998c27a0847af",
