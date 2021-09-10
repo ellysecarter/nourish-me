@@ -1,3 +1,38 @@
+//sets ElementById("ingredients") to the recipe's ingredients separated by <br>s
+function setIngredients(id) {
+    $.ajax({
+        url:"https://api.spoonacular.com/recipes/"+id+"/information?apiKey=66f53e7e0ca942c9806998c27a0847af",
+        success: function(res) {
+            var ingredients = res.extendedIngredients
+            var ingredientsString = ""
+            for (i=0; i<ingredients.length; i++) {
+                ingredientsString = ingredientsString  + ingredients[i].original + "<br>"
+            }
+            document.getElementById("ingredients").innerHTML = ingredientsString
+        }
+    });
+}
+
+//sets ElementById("instructions") to the recipe's instructions separated by <br>s
+function setInstructions(id) {
+    $.ajax({
+        url:"https://api.spoonacular.com/recipes/"+id+"/analyzedInstructions?apiKey=66f53e7e0ca942c9806998c27a0847af",
+        success: function(res) {
+            var instructions = res
+            var instructionsString = ""
+            for (i=0; i<instructions.length; i++) {
+                if (instructions.length > 1) {
+                    instructionsString = instructionsString + "Part " + (i+1) + "<br>"
+                }
+                for (j=0; j<instructions[i].steps.length; j++) {
+                    instructionsString = instructionsString  + instructions[i].steps[j].step + "<br>"
+                }
+            }
+            document.getElementById("instructions").innerHTML = instructionsString
+        }
+    });
+}
+
 //sets ElementById("sourceLink") to display and link to the recipe
 function setLink(id) {
     $.ajax({
@@ -9,31 +44,17 @@ function setLink(id) {
     });
 }
 
-//sets ElementById("ingredients") to the recipe's ingredients separated by <br>s
-function setIngredients(id) {
-    $.ajax({
-        url:"https://api.spoonacular.com/recipes/"+id+"/information?apiKey=66f53e7e0ca942c9806998c27a0847af",
-        success: function(res) {
-            var ingredients = res.extendedIngredients
-            var ingredientsString = ""
-            for (i=0; i<ingredients.length; i++) {
-                ingredientsString = ingredientsString  + ingredients[i].name + "<br>"
-            }
-            document.getElementById("ingredients").innerHTML = ingredientsString
-        }
-    });
-}
-
 //is called by the button to search for one recipe and set ElementById("title") to its title as well as call other functions
 //two commented out lines contain code for displaying the recipe's corresponding image and how long it takes to prepare
 function getRecipe(q) {
     $.ajax({
         url: "https://api.spoonacular.com/recipes/search?apiKey=66f53e7e0ca942c9806998c27a0847af&number=1&query="+q,
         success: function(res){
-            document.getElementById("title").innerHTML="<h1>"+res.results[0].title+"</h1><br>"+
-            //image "<img src='"+res.baseUri+res.results[0].image+"' width='400' /> <br>"+
-            //"Ready in "+res.results[0].readyInMinutes+" minutes"
+            document.getElementById("title").innerHTML="<h1>"+res.results[0].title+"</h1>"/*+
+            "<br><img src='"+res.baseUri+res.results[0].image+"' width='400' /> <br>"+
+            "Ready in "+res.results[0].readyInMinutes+" minutes" */
             setIngredients(res.results[0].id)
+            setInstructions(res.results[0].id)
             setLink(res.results[0].id)
         }
     });
