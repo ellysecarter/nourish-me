@@ -1,3 +1,18 @@
+//sets ElementById("servings") to the recipe's number of servings
+function setServings(id) {
+    $.ajax({
+        url:"https://api.spoonacular.com/recipes/"+id+"/information?apiKey=66f53e7e0ca942c9806998c27a0847af",
+        success: function(res) {
+            if (res.servings == 1) {
+                document.getElementById("servings").innerHTML = res.servings + " Serving"
+            }
+            else {
+                document.getElementById("servings").innerHTML = res.servings + " Servings"
+            }
+        }
+    });
+}
+
 //sets ElementById("ingredients") to the recipe's ingredients separated by <br>s
 function setIngredients(id) {
     $.ajax({
@@ -50,12 +65,14 @@ function getRecipe(q) {
     $.ajax({
         url: "https://api.spoonacular.com/recipes/search?apiKey=66f53e7e0ca942c9806998c27a0847af&number=1&query="+q,
         success: function(res){
+            var id = res.results[0].id
             document.getElementById("title").innerHTML="<h1>"+res.results[0].title+"</h1>"/*+
             "<br><img src='"+res.baseUri+res.results[0].image+"' width='400' /> <br>"+
             "Ready in "+res.results[0].readyInMinutes+" minutes" */
-            setIngredients(res.results[0].id)
-            setInstructions(res.results[0].id)
-            setLink(res.results[0].id)
+            setServings(id)
+            setIngredients(id)
+            setInstructions(id)
+            setLink(id)
         }
     });
 }
