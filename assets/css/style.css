@@ -1,14 +1,3 @@
-:root {
-    --primary: #ccdad1;
-    --secondary: #9caea9;
-    --tertiary: #788585;
-    --light-dark: #6f6866;
-    --dark: #38302e;
-    --border-radius: .3rem;
-    --background-color: white;
-  }
-  
-
   
 
 /* apply styles to <header> */
@@ -21,8 +10,6 @@ header {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-image: url("");
-    background-size: cover;
     background-position: 80%;
     background-attachment: fixed;
     z-index: 9999;
@@ -34,7 +21,8 @@ header h1 {
     font-size: 60px;
     color: #630e08;
     margin: 0;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    text-shadow: 0 0 20px white;
 }
 
 header a {
@@ -58,6 +46,7 @@ header nav ul li a {
   text-decoration: underline 4px;
   text-underline-offset: 8px;
   text-decoration-color: #630e08;
+  text-shadow: 0 0 20px white;
 }
 
 /* Add hero here */
