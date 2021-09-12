@@ -5,7 +5,7 @@ var ingredientsArray = [];
 var searchFormEl = document.querySelector("#search-form");
 var ingredientInputEl = document.querySelector("#ingredient");
 var recipeLinkEl = document.querySelector("#recipe-link");
-var cityButtonsEl = document.querySelector("#recent-searches");
+var ingredientsButtonsEl = document.querySelector("#recent-searches");
 var ingredientName;
 
 var currentTempEl =  document.querySelector("#temp");
@@ -19,12 +19,13 @@ var currentIconEl =  document.querySelector("#current-weather-icon");
 
 function getIngredientName() {
     var queryString = document.location.search;
-    var ingredientName = queryString.split("=")[1];
+    ingredientName = queryString.split("=")[1];
+    ingredientName = ingredientName.replace("%20", " ");
     if (ingredientName){
-        ingredientNameEl.textContent = ingredientName.replace("%20", " ");
+        // ingredientNameEl.textContent = ingredientName.replace("%20", " ");
         getIngredientInfo(ingredientName);
     }else {
-        // document.location.replace("./index.html");
+        return;
       }
 }
 
@@ -40,7 +41,7 @@ var getIngredientInfo = function(ingredient) {
                 descriptionEl.textContent = data.foods[0].description;
                 // set the recipe search link for this ingredient
                 recipeLinkEl.innerHTML = "<a href='./recipes.html?ingredient_name='" + ingredient + ">" + ingredient+ "</a>";
-
+                //display the nutrients info data
                 for (var i = 0; i < data.foods[0].foodNutrients.length; i++){ 
                     //create a new row of nutrient info consisting of nutrient name, amount and unit
                     var nutrientRowEL = document.createElement('div');
@@ -71,15 +72,10 @@ var getIngredientInfo = function(ingredient) {
 
                     //add new nutrient row element to nutrient contianer
                     nutritionContainerEl.appendChild(nutrientRowEL);
-                    console.log("1")
-                    console.log(nutritionContainerEl)
-                    console.log("2")
                 }
-          
-            //   // check if api has paginated issues
-            //   if (response.headers.get("Link")) {
-            //     displayWarning(repo);
-            //   }
+                //reset the recent searches buttons
+                displayRecentSearches()
+           
             });
         }else {
             document.location.replace("./index.html");
@@ -163,7 +159,36 @@ var formSubmitHandler = function(event){
 
 };
 
-searchFormEl.addEventListener("submit", formSubmitHandler);
 
-// getIngredientName();
-  console.log("here")
+var displayRecentSearches = function (){
+    if (localStorage.getItem("ingredientsArray")){
+    ingredientsButtonsEl.innerHTML = '';
+    citiesArray = JSON.parse(localStorage.getItem("ingredientsArray"));
+    
+    if (citiesArray ){
+        for (var i = 0; i < citiesArray.length ; i++){
+            var ingredientSearchBtnEL = document.createElement("button");
+            ingredientSearchBtnEL.textContent = citiesArray[i];
+            ingredientSearchBtnEL.setAttribute("ingredient-id", citiesArray[i]);
+            ingredientSearchBtnEL.setAttribute("class", "btn-2");
+            ingredientsButtonsEl.appendChild(ingredientSearchBtnEL);
+        }
+    }
+    } else{
+        return;
+    }
+};
+
+var recentSearchesHandler = function(event){
+    event.preventDefault();
+    var targetEl = event.target;
+    ingredientName = targetEl.getAttribute("ingredient-id");
+
+    document.location.replace("./ingredients.html?ingredient_name=" + ingredientName);
+}
+
+searchFormEl.addEventListener("submit", formSubmitHandler);
+ingredientsButtonsEl.addEventListener("click", recentSearchesHandler);
+
+displayRecentSearches();
+getIngredientName();

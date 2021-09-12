@@ -89,3 +89,15 @@ body {
   text-align: center;
 }
 
+
+.btn-2 {
+  color: black;
+  background-color: lightgray;
+  width:100%;
+  border: none;
+  margin: 5px ;
+  padding: 5px 0 5px 0;
+  font-size: large;
+  border-radius: .25rem;
+}
+
