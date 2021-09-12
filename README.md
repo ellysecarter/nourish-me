@@ -10,7 +10,7 @@ It also saves your search history which can be found in your console log. It dis
 
 
 ## Live site 
-
+https://ellysecarter.github.io/nourish-me/ 
 
 ## Known Bugs
 None known
