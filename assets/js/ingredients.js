@@ -22,7 +22,6 @@ function getIngredientName() {
     ingredientName = queryString.split("=")[1];
     ingredientName = ingredientName.replace("%20", " ");
     if (ingredientName){
-        // ingredientNameEl.textContent = ingredientName.replace("%20", " ");
         getIngredientInfo(ingredientName);
     }else {
         return;
@@ -40,7 +39,7 @@ var getIngredientInfo = function(ingredient) {
                 // set the ingredient description text
                 descriptionEl.textContent = data.foods[0].description;
                 // set the recipe search link for this ingredient
-                recipeLinkEl.innerHTML = "<a href='./recipes.html?ingredient_name='" + ingredient + ">" + ingredient+ "</a>";
+                recipeLinkEl.innerHTML = "<a href='./recipes.html#" + ingredient + "'>" + ingredient+ "</a>";
                 //display the nutrients info data
                 for (var i = 0; i < data.foods[0].foodNutrients.length; i++){ 
                     //create a new row of nutrient info consisting of nutrient name, amount and unit
@@ -51,18 +50,21 @@ var getIngredientInfo = function(ingredient) {
                     var nutrientNameEl = document.createElement('div');
                     nutrientNameEl.setAttribute('class', 'col-md-6');
                     nutrientNameEl.setAttribute('id', 'nutrient-'+i);
+                    nutrientNameEl.setAttribute('style', ' text-align:left')
                     nutrientNameEl.textContent = data.foods[0].foodNutrients[i].nutrientName;
 
                     //create new column for ingredient amount
                     var nutrientAmountEl = document.createElement('div');
                     nutrientAmountEl.setAttribute('class', 'col-md-3');
                     nutrientAmountEl.setAttribute('id', 'amount-'+i);
+                    nutrientAmountEl.setAttribute('style', ' text-align:left')
                     nutrientAmountEl.textContent = data.foods[0].foodNutrients[i].value;
 
                     //create new column for unit
                     var nutrientUnitEl = document.createElement('div');
                     nutrientUnitEl.setAttribute('class', 'col-md-3');
                     nutrientUnitEl.setAttribute('id', 'unit-'+i);
+                    nutrientUnitEl.setAttribute('style', ' text-align:left')
                     nutrientUnitEl.textContent = data.foods[0].foodNutrients[i].unitName;
 
                     //add name, amount and unit columns to the nutrient row element
@@ -70,6 +72,12 @@ var getIngredientInfo = function(ingredient) {
                     nutrientRowEL.appendChild(nutrientAmountEl);
                     nutrientRowEL.appendChild(nutrientUnitEl);
 
+                    //
+                    if ((i % 2) == 1){
+                        console.log("true" + i)
+                        nutrientRowEL.style.backgroundColor = "lightgray";
+                        console.log(nutrientRowEL)
+                    }
                     //add new nutrient row element to nutrient contianer
                     nutritionContainerEl.appendChild(nutrientRowEL);
                 }
