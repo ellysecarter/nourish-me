@@ -1,3 +1,5 @@
+const API_KEY = "66f53e7e0ca942c9806998c27a0847af"
+
 //loads previous searches saved in localStorage
 function loadSavedRecipes() {
     document.getElementById("recentSearches").innerHTML = JSON.parse(window.localStorage.getItem("SavedRecipes")) ?? "";
@@ -19,21 +21,21 @@ function clearSavedRecipes() {
 //sets the displayed recipe to the recipe with the passed id as well as saves it in localStorage
 function setSaveRecipe(id) {
     $.ajax({
-        url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=66f53e7e0ca942c9806998c27a0847af`,
+        url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`,
         success: function(res) {
-            document.getElementById("title").innerHTML="<h1>"+res.title+"</h1>"
+            document.getElementById("title").innerHTML=`<h1>${res.title}</h1>`
 
             if (res.servings == 1) {
-                document.getElementById("servings").innerHTML = res.servings + " Serving"
+                document.getElementById("servings").innerHTML = `${res.servings} Serving`
             }
             else {
-                document.getElementById("servings").innerHTML = res.servings + " Servings"
+                document.getElementById("servings").innerHTML = "1 Serving"
             }
 
             var ingredients = res.extendedIngredients
             var ingredientsString = ""
             for (i=0; i<ingredients.length; i++) {
-                ingredientsString = ingredientsString  + ingredients[i].original + "<br>"
+                ingredientsString = `${ingredientsString}<a href="./recipes.html?ingredient_name=${ingredients[i].name}">${ingredients[i].original}</a><br>`
             }
             document.getElementById("ingredients").innerHTML = ingredientsString
 
@@ -50,7 +52,7 @@ function setSaveRecipe(id) {
 //sets ElementById("instructions") to the recipe's instructions separated by <br>s
 function setInstructions(id) {
     $.ajax({
-        url:`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=66f53e7e0ca942c9806998c27a0847af`,
+        url:`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${API_KEY}`,
         success: function(res) {
             var instructions = res
             var instructionsString = ""
@@ -71,7 +73,7 @@ function setInstructions(id) {
 function getRecipeNameSearch() {
     var searchText = document.getElementById("searchText").value
     $.ajax({
-        url: `https://api.spoonacular.com/recipes/complexSearch?number=1&query=${searchText}&apiKey=66f53e7e0ca942c9806998c27a0847af`,
+        url: `https://api.spoonacular.com/recipes/complexSearch?number=1&query=${searchText}&apiKey=${API_KEY}`,
         success: function(res){
             setSaveRecipe(res.results[0].id);
             setInstructions(res.results[0].id);
@@ -83,7 +85,7 @@ function getRecipeNameSearch() {
 function getRecipeIngredientSearch() {
     var searchText = document.getElementById("searchText").value
     $.ajax({
-        url: `https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients=${searchText}&apiKey=66f53e7e0ca942c9806998c27a0847af`,
+        url: `https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients=${searchText}&apiKey=${API_KEY}`,
         success: function(res){
             setSaveRecipe(res[0].id);
             setInstructions(res[0].id);
@@ -95,7 +97,7 @@ function getRecipeIngredientSearch() {
 //is called on load to search for one recipe by ingredient using what comes after # in the url and call other functions to display it
 function getRecipeIngredientURL() {
     $.ajax({
-        url: `https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients=${window.location.hash.substr(1)}&apiKey=66f53e7e0ca942c9806998c27a0847af`,
+        url: `https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients=${window.location.hash.substr(1)}&apiKey=${API_KEY}`,
         success: function(res){
             setSaveRecipe(res[0].id);
             setInstructions(res[0].id);
