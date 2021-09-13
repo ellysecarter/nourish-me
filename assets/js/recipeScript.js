@@ -35,7 +35,7 @@ function setSaveRecipe(id) {
             var ingredients = res.extendedIngredients
             var ingredientsString = ""
             for (i=0; i<ingredients.length; i++) {
-                ingredientsString = `${ingredientsString}<a href="./recipes.html?ingredient_name=${ingredients[i].name}">${ingredients[i].original}</a><br>`
+                ingredientsString = `${ingredientsString}<a href="./ingredients.html?ingredient_name=${ingredients[i].name}">${ingredients[i].original}</a><br>`
             }
             document.getElementById("ingredients").innerHTML = ingredientsString
 
@@ -113,10 +113,12 @@ function getRecipeSaved(id) {
 
 //loads button functions and check if a recipe needs to be found based on url
 window.onload = function() {
+    loadSavedRecipes();
     document.getElementById("nameSearch").addEventListener("click", getRecipeNameSearch);
     document.getElementById("ingredientSearch").addEventListener("click", getRecipeIngredientSearch);
     document.getElementById("searchClear").addEventListener("click", clearSavedRecipes);
 
+    loadSavedRecipes();
     if (location.hash != "") {
         getRecipeIngredientURL();
     }
