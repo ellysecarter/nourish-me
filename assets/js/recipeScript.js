@@ -35,7 +35,7 @@ function setSaveRecipe(id) {
             var ingredients = res.extendedIngredients
             var ingredientsString = ""
             for (i=0; i<ingredients.length; i++) {
-                ingredientsString = `${ingredientsString}<a href="./recipes.html?ingredient_name=${ingredients[i].name}">${ingredients[i].original}</a><br>`
+                ingredientsString = `${ingredientsString}<a href="./ingredients.html?ingredient_name=${ingredients[i].name}">${ingredients[i].original}</a><br>`
             }
             document.getElementById("ingredients").innerHTML = ingredientsString
 
