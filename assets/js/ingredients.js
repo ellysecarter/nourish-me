@@ -15,7 +15,7 @@ var currentUVEl =  document.querySelector("#uv");
 var currentCityEl =  document.querySelector("#current-city");
 var currentDateEl =  document.querySelector("#current-date");
 var currentIconEl =  document.querySelector("#current-weather-icon");
-
+var nutrientsArray  = new Array();
 
 function getIngredientName() {
     var queryString = document.location.search;
@@ -74,15 +74,16 @@ var getIngredientInfo = function(ingredient) {
 
                     //
                     if ((i % 2) == 1){
-                        console.log("true" + i)
                         nutrientRowEL.style.backgroundColor = "lightgray";
-                        console.log(nutrientRowEL)
                     }
                     //add new nutrient row element to nutrient contianer
                     nutritionContainerEl.appendChild(nutrientRowEL);
+
+
                 }
+
                 //reset the recent searches buttons
-                displayRecentSearches()
+                displayRecentSearches();
            
             });
         }else {
@@ -171,13 +172,13 @@ var formSubmitHandler = function(event){
 var displayRecentSearches = function (){
     if (localStorage.getItem("ingredientsArray")){
     ingredientsButtonsEl.innerHTML = '';
-    citiesArray = JSON.parse(localStorage.getItem("ingredientsArray"));
+    ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
     
-    if (citiesArray ){
-        for (var i = 0; i < citiesArray.length ; i++){
+    if (ingredientsArray ){
+        for (var i = 0; i < ingredientsArray.length ; i++){
             var ingredientSearchBtnEL = document.createElement("button");
-            ingredientSearchBtnEL.textContent = citiesArray[i];
-            ingredientSearchBtnEL.setAttribute("ingredient-id", citiesArray[i]);
+            ingredientSearchBtnEL.textContent = ingredientsArray[i];
+            ingredientSearchBtnEL.setAttribute("ingredient-id", ingredientsArray[i]);
             ingredientSearchBtnEL.setAttribute("class", "btn-2");
             ingredientsButtonsEl.appendChild(ingredientSearchBtnEL);
         }

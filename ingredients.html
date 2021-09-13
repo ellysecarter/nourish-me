@@ -7,8 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <title>Nourish Me</title>
@@ -108,13 +107,27 @@
   </div>
 </div>
 
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+<style>
+  .node:hover{
+    stroke-width: 7px !important;
+    opacity: 1 !important;
+  }
+  </style>
+
 </main>
 
   <footer>
     Ⓒ DEJSW Studio 2021
   </footer>
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
 
-  <script src="./assets/js/ingredients.js"></script>
+<!-- Color palette -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<script src="./assets/js/ingredients.js"></script>
 </body>
 
 </html>
