@@ -117,6 +117,7 @@ window.onload = function() {
     document.getElementById("ingredientSearch").addEventListener("click", getRecipeIngredientSearch);
     document.getElementById("searchClear").addEventListener("click", clearSavedRecipes);
 
+    loadSavedRecipes();
     if (location.hash != "") {
         getRecipeIngredientURL();
     }
