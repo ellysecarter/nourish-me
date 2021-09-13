@@ -32,7 +32,7 @@ function getIngredientName() {
 
 var getIngredientInfo = function(ingredient) {
     var apiUrl = "https://api.nal.usda.gov/fdc/v1/foods/search?api_key=CaaqbdHoAR2KavNuAQFcBRRv7vL4gDF78ENsyxMu&query=" + ingredient + "&dataType=Survey (FNDDS)&pagesize=5";
-    
+
     fetch(apiUrl).then(function(response) {
         // request was successful
         if (response.ok) {
@@ -40,13 +40,13 @@ var getIngredientInfo = function(ingredient) {
                 // set the ingredient description text
                 descriptionEl.textContent = data.foods[0].description;
                 // set the recipe search link for this ingredient
-                recipeLinkEl.innerHTML = "<a href='./recipes.html?ingredient_name='" + ingredient + ">" + ingredient+ "</a>";
+                recipeLinkEl.innerHTML = "<a href='./recipes.html#" + ingredient + "'>" + ingredient+ "</a>";
                 //display the nutrients info data
-                for (var i = 0; i < data.foods[0].foodNutrients.length; i++){ 
+                for (var i = 0; i < data.foods[0].foodNutrients.length; i++){
                     //create a new row of nutrient info consisting of nutrient name, amount and unit
                     var nutrientRowEL = document.createElement('div');
                     nutrientRowEL.setAttribute('class', 'row');
-                    
+
                     //create new column for ingredient name
                     var nutrientNameEl = document.createElement('div');
                     nutrientNameEl.setAttribute('class', 'col-md-6');
@@ -75,14 +75,14 @@ var getIngredientInfo = function(ingredient) {
                 }
                 //reset the recent searches buttons
                 displayRecentSearches()
-           
+
             });
         }else {
             document.location.replace("./index.html");
         }
       });
 };
-  
+
 var displayIssues = function(issues) {
     if (issues.length === 0) {
         issueContainerEl.textContent = "This repo has no open issues!";
@@ -95,7 +95,7 @@ var displayIssues = function(issues) {
         issueEl.classList = "list-item flex-row justify-space-between align-center";
         issueEl.setAttribute("href", issues[i].html_url);
         issueEl.setAttribute("target", "_blank");
-        
+
         // create span to hold issue title
         var titleEl = document.createElement("span");
         titleEl.textContent = issues[i].title;
@@ -122,12 +122,12 @@ var displayIssues = function(issues) {
 var displayWarning = function(repo) {
     // add text to warning container
     limitWarningEl.textContent = "To see more than 30 issues, visit ";
-    
+
     var linkEl = document.createElement("a");
     linkEl.textContent = "See More Issues on GitHub.com";
     linkEl.setAttribute("href", "https://github.com/" + repo + "/issues");
     linkEl.setAttribute("target", "_blank");
-  
+
     // append to warning container
     limitWarningEl.appendChild(linkEl);
 };
@@ -142,7 +142,7 @@ var formSubmitHandler = function(event){
         getIngredientInfo(ingredientName);
         if (localStorage.getItem("ingredientsArray")){
             ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
-            
+
             var idx = ingredientsArray.length;
             ingredientsArray[idx] = ingredientName;
             localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
@@ -150,7 +150,7 @@ var formSubmitHandler = function(event){
             ingredientsArray[0] = ingredientName;
             localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
         }
-        // clear the search field 
+        // clear the search field
         ingredientInputEl.value = "";
     // if city name is blank, alert user
     } else {
@@ -164,7 +164,7 @@ var displayRecentSearches = function (){
     if (localStorage.getItem("ingredientsArray")){
     ingredientsButtonsEl.innerHTML = '';
     citiesArray = JSON.parse(localStorage.getItem("ingredientsArray"));
-    
+
     if (citiesArray ){
         for (var i = 0; i < citiesArray.length ; i++){
             var ingredientSearchBtnEL = document.createElement("button");
