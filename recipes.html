@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./assets/js/recipeScript.js"></script>
+  <title>Nourish Me</title>
+</head>
+
+
+<!-- title and nav bar -->
+<body class="flex-column min-100-vh">
+  <header class="header">
+    <h1 class="app-title"><i class="fa-solid fa-user-chef"></i><a href="https://ellysecarter.github.io/nourish-me/"> Nourish Me!</a></h1>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="./index.html">Home</a>
+            </li>
+            <li>
+                <a href="./recipes.html">Recipes</a>
+            </li>
+            <li>
+                <a href="./ingredients.html">Ingredients</a>
+            </li>
+            <li>
+                <a href="./contact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- hero -->
+<!-- <section class="hero">
+    <div class="hero-cta">
+        <h2>
+            Looking for a recipe is easy, but finding out the nutritional content of each ingredient in the recipe can be tedious and daunting.
+            <br>
+            <h2>Nourish Me! got you covered!</h2>
+            <h3>It's quick and easy!</h3>
+            <h3>Search a recipe or food item below and we'll do the rest.</h3>
+        </h2>
+    </div>
+</section> -->
+
+  <main class="flex-row search">
+    <div class="col-12">
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By Dish or Food Item</h3>
+        <input id="searchText" aria-label="search-field">
+        <button id="nameSearch">Search by Name</button>
+        <button id="ingredientSearch">Search by Ingredient</button>
+      </div>
+    </div>
+
+
+    <!--fields used by functions to display information-->
+    <div id="title"></div>
+    <div id="servings"></div> <br>
+    <button id="searchClear">Clear Recent Searches</button> <br>
+    <div id="recentSearches"></div>
+    <div id="ingredients"></div> <br>
+    <div id="instructions"></div> <br>
+    <a href="" id="sourceLink"></a>
+  </main>
+
+  <footer>
+    Ⓒ DEJSW Studio 2021
+  </footer>
+</body>
+
+</html>

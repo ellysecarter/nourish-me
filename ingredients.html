@@ -44,103 +44,51 @@
   </header>
 
 <main class="search ">
-<div class="row">
-  <div id="ingredients-search" style="display: none;" >
-  <div class="col-12 col-md-4">
-    <div class="card" id="search-container">
-      <h3 class="card-header">Find an ingredient:</h3>
-      <form id="search-form" class="card-body">
-        <input name="ingredient" id="ingredient" type="text" autofocus="true" class="form-input" />
-        <button type="submit" class="btn">Search</button>
-      </form>
-      <hr>
-    </div>
-    <div class="card">
-      <div class="card-body" id="recent-searches">
-        <form id="recent-searches" class="card-body"></form>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-12 col-md-8">
-    <div id="ingredient-info-container" class="card nutrient-table">
-      <div class="info-container">
-        <div class="row">
-          <div class="column">
-            <h3>Description: </h3>
-          </div>
-          <div class="column">
-            <span id="nutrient-description" style="font-size:16pt"></span> 
-          </div>
-        </div>
-        <div class="row">
-          <div class="column">
-            <h3>Serving Size: </h3>
-          </div>
-          <div class="column">
-            <span id="serving-size"style="font-size:16pt"></span> 
-          </div>
-        </div>
-        <div class="row">
-          <div class="column">
-            <h3>Find a recipe based on: </h3>
-          </div>
-          <div class="column">
-            <span id="recipe-link"style="font-size:16pt"></span> 
-          </div>
-        </div>
-      </div>
-      <div class="row header-row">
-        <div class="col-md-6" style="text-align:left"><h2>Nutrient Name</h2></div>
-        <div class="col-md-3" style="text-align:left"><h2>Average Amount</h2></div>
-        <div class="col-md-3" style="text-align:left"><h2>Unit</h2></div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
 <div class="row">
-<section class="search">
-  <form id="search-form1">
+  <form id="search-header" class="search-header">
     <b>Ingredients</b><br>
-   <input name="ingredient1" id="ingredient" type="text" autofocus="true" class="form-input" onfocus="this.placeholder = ''"
+   <input name="ingredient1" id="ingredient" type="text" autofocus="true" placeholder="Find an ingredient" class="form-input" onfocus="this.placeholder = ''"
    onblur="this.placeholder = 'Find an ingredient'"/>
   </form>
-</section>
 </div>
 
-<div class="row">
+<div class="row popular-header">
+  <b>Popular Ingredients</b>
+</div>
 <section class="popular">
 <div class="row" id="popular-ingredients">
-  <div class="column">
+  <div class="column col-md-3">
     <article class="pop-ingredient">
-            <img src="./assets/images/tomatos.jpg" alt="plate of cut tomatoes" />
+          <a href="/ingredients.html?ingredient1=tomatoes"><img src="./assets/images/tomatos.jpg" alt="plate of cut tomatoes" /></a>
             <div class="ingredient-bio">
               <h7 class="ingredient-macros">Tomatoes <br> 22	kcal | 3.84	g Carbs <br> 0.7	g Protien | 1	g Fiber</h4>
             </div>
         
     </article>
   </div>
-  <div class="column">
+  <div class="column col-md-3">
     <article class="pop-ingredient">
-      <img src="./assets/images/avocado.jpg" alt="hand holding half an avocado" />
+      <a href="/ingredients.html?ingredient1=avocado">
+      <img src="./assets/images/avocado.jpg" alt="hand holding half an avocado" /></a>
       <div class="ingredient-bio">
         <h7 class="ingredient-macros">Avocado <br> 167	kcal | 8.64	g Carbs <br> 1.96	g Protien | 6.8	g Fiber</h8>
         </div>
     </article>
   </div>
-  <div class="column">
+  <div class="column col-md-3">
     <article class="pop-ingredient">
-      <img src="./assets/images/beets.jpg" alt="a raw bunch of red beets" />
+      <a href="/ingredients.html?ingredient1=beets">
+      <img src="./assets/images/beets.jpg" alt="a raw bunch of red beets" /></a>
       <div class="ingredient-bio">
         <h7 class="ingredient-macros">Beets <br> 43	kcal | 9.56	g Carbs <br> 1.61	g Protien | 2.8	g Fiber</h4>
       </div>
     </article>
   </div>
-  <div class="column">
+  <div class="column col-md-3">
     <article class="pop-ingredient">
-      <img src="./assets/images/salmon.jpg" alt="raw salmon filet" />
+      <a href="/ingredients.html?ingredient1=raw%20salmon">
+      <img src="./assets/images/salmon.jpg" alt="raw salmon filet" /></a>
       <div class="ingredient-bio">
         <h7 class="ingredient-macros">Salmon <br> 131	kcal | 0	g Carbs <br> 22.2	g Protien | 0	g Fiber</h4>
       </div>
@@ -148,6 +96,61 @@
   </div>
 </div>
 </section>
+</div>
+
+<div class="row">
+  <div id="ingredients-search" style="display: none;" class="search-container" >
+  <div class="col-12 col-md-4">
+    <div  id="search-container">
+      <form id="search-form" class="card-body">
+        <input name="ingredient" id="ingredient" type="text" autofocus="f" placeholder="Find an ingredient" class="form-input" onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Find an ingredient'"/>
+        <button type="submit" class="btn">Search</button>
+      </form>
+    </div>
+    <div>
+      <div class="card-body" id="recent-searches">
+        <form id="recent-searches" class="card-body"></form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-12 col-md-8">
+    <div id="ingredient-info-container" class="nutrient-table">
+      <div class="info-container">
+        <div class="row">
+          <div class="column">
+            <b>Description: </b>
+          </div>
+          <div class="column">
+            <span id="nutrient-description"></span> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <b>Serving Size: </b>
+          </div>
+          <div class="column">
+            <span id="serving-size"></span> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <b>Find a recipe based on: </b>
+          </div>
+          <div class="column">
+            <span id="recipe-link"></span> 
+          </div>
+        </div>
+      </div>
+      <div class="row header-row">
+        <div class="col-md-6" style="text-align:left"><b>Nutrient Name</b></div>
+        <div class="col-md-3" style="text-align:left"><b>Avg Amount</b></div>
+        <div class="col-md-3" style="text-align:left"><b>Unit</b></div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
@@ -169,7 +172,7 @@
 <!-- Color palette -->
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
-<!-- <script src="./assets/js/ingredients.js"></script> -->
+<script src="./assets/js/ingredients.js"></script>
 </body>
 
 </html>

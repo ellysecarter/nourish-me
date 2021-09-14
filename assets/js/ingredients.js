@@ -2,7 +2,8 @@ var nutritionContainerEl = document.querySelector("#ingredient-info-container");
 var descriptionEl = document.querySelector("#nutrient-description");
 var ingredientNameEl = document.querySelector("#ingredient-name");
 var ingredientsArray = [];
-var searchheaderFormEl = document.querySelector("#search-header");
+
+var searchSectionEl = document.querySelector("#ingredients-search");
 var searchFormEl = document.querySelector("#search-form");
 var ingredientInputEl = document.querySelector("#ingredient");
 var recipeLinkEl = document.querySelector("#recipe-link");
@@ -18,12 +19,13 @@ var currentDateEl =  document.querySelector("#current-date");
 var currentIconEl =  document.querySelector("#current-weather-icon");
 var nutrientsArray  = new Array();
 
-function getIngredientName() {
+function setIngredientFromURL() {
     var queryString = document.location.search;
     ingredientName = queryString.split("=")[1];
-    ingredientName = ingredientName.replace("%20", " ");
+
     if (ingredientName){
         getIngredientInfo(ingredientName);
+        showSearchSection ();
     }else {
         return;
       }
@@ -74,7 +76,7 @@ var getIngredientInfo = function(ingredient) {
                     nutrientRowEL.appendChild(nutrientUnitEl);
 
                     //
-                    if ((i % 2) == 1){
+                    if ((i % 2) == 0){
                         nutrientRowEL.style.backgroundColor = "lightgray";
                     }
                     //add new nutrient row element to nutrient contianer
@@ -129,19 +131,6 @@ var displayIssues = function(issues) {
       }
 };
 
-var displayWarning = function(repo) {
-    // add text to warning container
-    limitWarningEl.textContent = "To see more than 30 issues, visit ";
-    
-    var linkEl = document.createElement("a");
-    linkEl.textContent = "See More Issues on GitHub.com";
-    linkEl.setAttribute("href", "https://github.com/" + repo + "/issues");
-    linkEl.setAttribute("target", "_blank");
-  
-    // append to warning container
-    limitWarningEl.appendChild(linkEl);
-};
-
 var formSubmitHandler = function(event){
 
     event.preventDefault();
@@ -162,9 +151,9 @@ var formSubmitHandler = function(event){
         }
         // clear the search field 
         ingredientInputEl.value = "";
-    // if city name is blank, alert user
+    // if ingredient name is blank, alert user
     } else {
-            alert("Please enter a city username");
+            alert("Please enter an ingredient username");
     }
 
 };
@@ -197,9 +186,17 @@ var recentSearchesHandler = function(event){
     document.location.replace("./ingredients.html?ingredient_name=" + ingredientName);
 }
 
+function showSearchSection (){
+    searchSectionEl.setAttribute("style", "display: flex");
+}
+
+function hideSearchSection (){
+    searchSectionEl.setAttribute("style", "display: none");
+}
+
 searchFormEl.addEventListener("submit", formSubmitHandler);
-searchheaderFormEl.addEventListener("submit", formSubmitHandler);
 ingredientsButtonsEl.addEventListener("click", recentSearchesHandler);
 
 displayRecentSearches();
-getIngredientName();
+setIngredientFromURL();
+// hideSearchSection ();

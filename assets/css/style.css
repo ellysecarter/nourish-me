@@ -22,8 +22,6 @@ header h1 {
     font-size: 35px;
     color: ##ffffff;
     margin: 0;
-    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
-    /* text-shadow: 0 0 20px white; */
 }
 
 header a {
@@ -43,11 +41,6 @@ header nav ul li a {
   padding: 10px 15px;
   color: #white;
   font-size: 1.55vw;
-  border-bottom: #630e08;
-  /* text-decoration: underline 1px; */
-  text-underline-offset: 8px;
-  /* text-decoration-color: #white; */
-  /* text-shadow: 0 0 20px white; */
 }
 
 footer {
@@ -96,13 +89,14 @@ body {
   font-size: 16px;
 }
 
-.search {
+.search-header {
   text-align: center;
+  margin: 0 auto
 }
 
 .btn {
   color: black;
-  background-color: lightsteelblue;
+  background-color:olive;
   width:100%;
   border: none;
   margin: 5px ;
@@ -112,8 +106,8 @@ body {
 }
 
 .btn-2 {
-  color: black;
-  background-color: lightgray;
+  color:white;
+  background-color: darkolivegreen;
   width:100%;
   border: none;
   margin: 5px ;
@@ -124,17 +118,14 @@ body {
 
 
 .info-container {
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 25px;
+  margin: 5px 5px 25px 15px;
   
 }
-.header-row {
-  background-color: lightsteelblue; /* added this */
-  }
 
   .nutrient-table{
     margin: 5px 5px 5px 5px;
     padding: 15px 25px 15px 25px;
+    text-align: right;
     
   }
 
@@ -151,6 +142,10 @@ body {
     justify-content: space-between;
   }
 
+  .popular-header{
+    background-color: cornsilk;
+    text-align: center;
+  }
   .search{
     display: block;
     background-color:darkkhaki;
@@ -167,10 +162,8 @@ body {
   .form-input{
     margin-bottom: 5px;
     border: none;
-  }
-
-  form-input:focus::placeholder {
-    color: transparent;
+    width: 100%;
+    outline: none;
   }
 
   .pop-ingredient{
@@ -179,3 +172,12 @@ body {
     text-align: center;
 
   }
+
+  .card{
+
+    background-color: #bab66f;
+  }
+
+.search-container{
+  border: none;
+}
