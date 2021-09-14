@@ -1,0 +1,181 @@
+  
+
+/* apply styles to <header> */
+header {
+    padding: 10px 35px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-position: 80%;
+    background-attachment: fixed;
+    z-index: 9999;
+    font-family: "Helvetica Neue";
+    background-color: black;
+}
+
+header h1 {
+    /* font-weight: bold; */
+    font-size: 35px;
+    color: ##ffffff;
+    margin: 0;
+    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    /* text-shadow: 0 0 20px white; */
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+header nav ul li a {
+  padding: 10px 15px;
+  color: #white;
+  font-size: 1.55vw;
+  border-bottom: #630e08;
+  /* text-decoration: underline 1px; */
+  text-underline-offset: 8px;
+  /* text-decoration-color: #white; */
+  /* text-shadow: 0 0 20px white; */
+}
+
+footer {
+  padding: 10px 35px;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  font-family: "Helvetica Neue";
+}
+/* Add hero here */
+
+.hero {
+  background-image: url(https://cdn-bogbo.nitrocdn.com/jtNZXqDzeVwdJtUEObArjKeyjfDHZTKd/assets/static/optimized/rev-12b8463/wp-content/uploads/2020/05/ausfreshfarmers1280by500_empty_Updateupdate.jpg);
+  padding: 130px;
+}
+
+.hero h2 {
+  text-align: center;
+  color: cornsilk;
+  font-family: serif;
+  flex-wrap: wrap;
+  width: 36%;
+  margin-left: 34%;
+  font-size: 18px;
+}
+
+.hero h3 {
+  text-align: center;
+  color: cornsilk;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  flex-wrap: wrap;
+  width: 36%;
+  margin-left: 34%;
+  font-size: 12px;
+}
+
+/* body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue";
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.search {
+  text-align: center;
+}
+
+.btn {
+  color: black;
+  background-color: lightsteelblue;
+  width:100%;
+  border: none;
+  margin: 5px ;
+  padding: 5px 0 5px 0;
+  font-size: large;
+  border-radius: .25rem;
+}
+
+.btn-2 {
+  color: black;
+  background-color: lightgray;
+  width:100%;
+  border: none;
+  margin: 5px ;
+  padding: 5px 0 5px 0;
+  font-size: large;
+  border-radius: .25rem;
+}
+
+
+.info-container {
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 25px;
+  
+}
+.header-row {
+  background-color: lightsteelblue; /* added this */
+  }
+
+  .nutrient-table{
+    margin: 5px 5px 5px 5px;
+    padding: 15px 25px 15px 25px;
+    
+  }
+
+  .popular{
+    display: flex;
+    background-color: cornsilk;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search{
+    display: block;
+    background-color:darkkhaki;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+  }
+
+  .form-input{
+    margin-bottom: 5px;
+    border: none;
+  }
+
+  form-input:focus::placeholder {
+    color: transparent;
+  }
+
+  .pop-ingredient{
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+
+  }
