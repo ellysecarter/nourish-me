@@ -5,8 +5,10 @@ var ingredientsArray = [];
 var searchOuterEL = document.querySelector("#search-outer-container");
 var searchSectionEl = document.querySelector("#ingredients-search");
 
+var searchHeaderFormEl = document.querySelector("#search-header");
 var searchFormEl = document.querySelector("#search-form");
 var ingredientInputEl = document.querySelector("#ingredient");
+var ingredientInput2El = document.querySelector("#ingredient2");
 var recipeLinkEl = document.querySelector("#recipe-link");
 var ingredientsButtonsEl = document.querySelector("#recent-searches");
 var ingredientName;
@@ -18,10 +20,6 @@ var currentUVEl =  document.querySelector("#uv");
 var currentCityEl =  document.querySelector("#current-city");
 var currentDateEl =  document.querySelector("#current-date");
 var currentIconEl =  document.querySelector("#current-weather-icon");
-<<<<<<< HEAD
-=======
-
->>>>>>> fcd-prototype
 var nutrientsArray  = new Array();
 
 function setIngredientFromURL() {
@@ -48,12 +46,7 @@ var getIngredientInfo = function(ingredient) {
                 // set the ingredient description text
                 descriptionEl.textContent = data.foods[0].description;
                 // set the recipe search link for this ingredient
-<<<<<<< HEAD
                 recipeLinkEl.innerHTML = "<a href='./recipes.html#" + ingredient + "'>" + ingredient+ "</a>";
-=======
-
-                recipeLinkEl.innerHTML = "<a href='./recipes.html#" + ingredient + "'>" + ingredient.replace("%20", " ") + "</a>";
->>>>>>> fcd-prototype
                 //display the nutrients info data
                 for (var i = 0; i < data.foods[0].foodNutrients.length; i++){ 
                     //create a new row of nutrient info consisting of nutrient name, amount and unit
@@ -65,10 +58,6 @@ var getIngredientInfo = function(ingredient) {
                     nutrientNameEl.setAttribute('class', 'columns medium-6');
                     nutrientNameEl.setAttribute('id', 'nutrient-'+i);
                     nutrientNameEl.setAttribute('style', ' text-align:left')
-<<<<<<< HEAD
-=======
-
->>>>>>> fcd-prototype
                     nutrientNameEl.textContent = data.foods[0].foodNutrients[i].nutrientName;
 
                     //create new column for ingredient amount
@@ -77,10 +66,6 @@ var getIngredientInfo = function(ingredient) {
                     nutrientAmountEl.setAttribute('class', 'columns medium-3');
                     nutrientAmountEl.setAttribute('id', 'amount-'+i);
                     nutrientAmountEl.setAttribute('style', ' text-align:left')
-<<<<<<< HEAD
-=======
-
->>>>>>> fcd-prototype
                     nutrientAmountEl.textContent = data.foods[0].foodNutrients[i].value;
 
                     //create new column for unit
@@ -89,10 +74,6 @@ var getIngredientInfo = function(ingredient) {
                     nutrientUnitEl.setAttribute('class', 'columns medium-3');
                     nutrientUnitEl.setAttribute('id', 'unit-'+i);
                     nutrientUnitEl.setAttribute('style', ' text-align:left')
-<<<<<<< HEAD
-=======
-
->>>>>>> fcd-prototype
                     nutrientUnitEl.textContent = data.foods[0].foodNutrients[i].unitName;
 
                     //add name, amount and unit columns to the nutrient row element
@@ -100,14 +81,8 @@ var getIngredientInfo = function(ingredient) {
                     nutrientRowEL.appendChild(nutrientAmountEl);
                     nutrientRowEL.appendChild(nutrientUnitEl);
 
-<<<<<<< HEAD
                     //
                     if ((i % 2) == 1){
-=======
-
-                    //
-                    if ((i % 2) == 0){
->>>>>>> fcd-prototype
                         nutrientRowEL.style.backgroundColor = "lightgray";
                     }
                     //add new nutrient row element to nutrient contianer
@@ -115,13 +90,10 @@ var getIngredientInfo = function(ingredient) {
 
 
                 }
-
+                // go to the nutrients anchor
+                window.location.href = "#nutrients-anchor";
                 //reset the recent searches buttons
                 displayRecentSearches();
-<<<<<<< HEAD
-=======
-                window.location.href = "#nutrients-anchor";
->>>>>>> fcd-prototype
            
 
             });
@@ -137,6 +109,7 @@ var formSubmitHandler = function(event){
     // get value from input element
     ingredientName = ingredientInputEl.value.trim();
     // if the ingredient name exist, get the nutrient information and add ingedrient name to localstorage
+    console.log("+ " + ingredientName)
     if (ingredientName) {
         getIngredientInfo(ingredientName);
         if (localStorage.getItem("ingredientsArray")){
@@ -160,14 +133,37 @@ var formSubmitHandler = function(event){
 
 };
 
+var form2SubmitHandler = function(event){
 
+    event.preventDefault();
+    // get value from input element
+    ingredientName = ingredientInput2El.value.trim();
+    // if the ingredient name exist, get the nutrient information and add ingedrient name to localstorage
+    if (ingredientName) {
+        getIngredientInfo(ingredientName);
+        if (localStorage.getItem("ingredientsArray")){
+            ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
+
+            var idx = ingredientsArray.length;
+            ingredientsArray[idx] = ingredientName;
+            localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
+        } else {
+            ingredientsArray[0] = ingredientName;
+            localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
+        }
+
+        // clear the search field 
+        ingredientInputEl.value = "";
+    // if ingredient name is blank, alert user
+    } else {
+            alert("Please enter an ingredient.");
+
+    }
+
+};
 var displayRecentSearches = function (){
     if (localStorage.getItem("ingredientsArray")){
     ingredientsButtonsEl.innerHTML = '';
-<<<<<<< HEAD
-=======
-
->>>>>>> fcd-prototype
     ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
     
     if (ingredientsArray ){
@@ -175,10 +171,6 @@ var displayRecentSearches = function (){
             var ingredientSearchBtnEL = document.createElement("button");
             ingredientSearchBtnEL.textContent = ingredientsArray[i];
             ingredientSearchBtnEL.setAttribute("ingredient-id", ingredientsArray[i]);
-<<<<<<< HEAD
-=======
-
->>>>>>> fcd-prototype
             ingredientSearchBtnEL.setAttribute("class", "btn-2");
             ingredientsButtonsEl.appendChild(ingredientSearchBtnEL);
         }
@@ -205,7 +197,8 @@ function hideSearchSection (){
     searchOuterEL.setAttribute("style", "display: none");
 }
 
-searchFormEl.addEventListener("submit", formSubmitHandler);
+searchFormEl.addEventListener("submit", form2SubmitHandler);
+searchHeaderFormEl.addEventListener("submit", formSubmitHandler);
 ingredientsButtonsEl.addEventListener("click", recentSearchesHandler);
 
 displayRecentSearches();

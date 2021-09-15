@@ -122,42 +122,15 @@ body {
   border-radius: .25rem;
 }
 
-<<<<<<< HEAD
-.btn {
-  color: black;
-  background-color: lightsteelblue;
-  width:100%;
-  border: none;
-  margin: 5px ;
-  padding: 5px 0 5px 0;
-  font-size: large;
-  border-radius: .25rem;
-}
-
-
-.info-container {
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 25px;
-  
-}
-.header-row {
-  background-color: lightsteelblue; /* added this */
-  }
-=======
 
 .info-container {
   margin: 5px 5px 25px 15px;
   
 }
->>>>>>> fcd-prototype
 
   .nutrient-table{
     margin: 5px 5px 5px 5px;
     padding: 15px 25px 15px 25px;
-<<<<<<< HEAD
-    
-  }
-=======
     /* text-align: right; */
     
   }
@@ -202,7 +175,7 @@ body {
   .form-input{
     margin-bottom: 5px;
     border: none;
-    width: 100%;
+    width: 25%;
     outline: none;
   }
 
@@ -222,4 +195,3 @@ body {
   background-color: #bab66f;
   width: 80%;
 }
->>>>>>> fcd-prototype

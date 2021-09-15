@@ -1,4 +1,4 @@
-const API_KEY = "66f53e7e0ca942c9806998c27a0847af"
+const API_KEY = "8747ec5f79834624a174d139366ac149"
 
 //loads previous searches saved in localStorage
 function loadSavedRecipes() {
@@ -21,11 +21,7 @@ function clearSavedRecipes() {
 //sets the displayed recipe to the recipe with the passed id as well as saves it in localStorage
 function setSaveRecipe(id) {
     $.ajax({
-<<<<<<< HEAD
-        url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=8747ec5f79834624a174d139366ac149`,
-=======
         url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`,
->>>>>>> fcd-prototype
         success: function(res) {
             document.getElementById("title").innerHTML=`<h1>${res.title}</h1>`
 
@@ -56,11 +52,7 @@ function setSaveRecipe(id) {
 //sets ElementById("instructions") to the recipe's instructions separated by <br>s
 function setInstructions(id) {
     $.ajax({
-<<<<<<< HEAD
-        url:`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=8747ec5f79834624a174d139366ac149`,
-=======
         url:`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${API_KEY}`,
->>>>>>> fcd-prototype
         success: function(res) {
             var instructions = res
             var instructionsString = ""
@@ -81,11 +73,7 @@ function setInstructions(id) {
 function getRecipeNameSearch() {
     var searchText = document.getElementById("searchText").value
     $.ajax({
-<<<<<<< HEAD
-        url: `https://api.spoonacular.com/recipes/complexSearch?number=1&query=${searchText}&apiKey=8747ec5f79834624a174d139366ac149`,
-=======
         url: `https://api.spoonacular.com/recipes/complexSearch?number=1&query=${searchText}&apiKey=${API_KEY}`,
->>>>>>> fcd-prototype
         success: function(res){
             setSaveRecipe(res.results[0].id);
             setInstructions(res.results[0].id);
@@ -97,11 +85,7 @@ function getRecipeNameSearch() {
 function getRecipeIngredientSearch() {
     var searchText = document.getElementById("searchText").value
     $.ajax({
-<<<<<<< HEAD
-        url: `https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients=${searchText}&apiKey=8747ec5f79834624a174d139366ac149`,
-=======
         url: `https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients=${searchText}&apiKey=${API_KEY}`,
->>>>>>> fcd-prototype
         success: function(res){
             setSaveRecipe(res[0].id);
             setInstructions(res[0].id);
@@ -113,11 +97,7 @@ function getRecipeIngredientSearch() {
 //is called on load to search for one recipe by ingredient using what comes after # in the url and call other functions to display it
 function getRecipeIngredientURL() {
     $.ajax({
-<<<<<<< HEAD
-        url: `https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients=${window.location.hash.substr(1)}&apiKey=8747ec5f79834624a174d139366ac149`,
-=======
         url: `https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients=${window.location.hash.substr(1)}&apiKey=${API_KEY}`,
->>>>>>> fcd-prototype
         success: function(res){
             setSaveRecipe(res[0].id);
             setInstructions(res[0].id);
