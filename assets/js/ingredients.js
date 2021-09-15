@@ -25,9 +25,19 @@ var nutrientsArray  = new Array();
 function setIngredientFromURL() {
     var queryString = document.location.search;
     ingredientName = queryString.split("=")[1];
-
+    ingredientName = ingredientName.replace("%20", " ");
     if (ingredientName){
         getIngredientInfo(ingredientName);
+        if (localStorage.getItem("ingredientsArray")){
+            ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
+
+            var idx = ingredientsArray.length;
+            ingredientsArray[idx] = ingredientName;
+            localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
+        } else {
+            ingredientsArray[0] = ingredientName;
+            localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
+        }
         showSearchSection ();
 
     }else {
@@ -43,6 +53,11 @@ var getIngredientInfo = function(ingredient) {
         // request was successful
         if (response.ok) {
             response.json().then(function(data) {
+                if (data.totalHits == 0){
+                    descriptionEl.textContent = '0 results found for ' + ingredient;
+                    descriptionEl.style.color = "red";
+                    return;
+                }
                 // set the ingredient description text
                 descriptionEl.textContent = data.foods[0].description;
                 // set the recipe search link for this ingredient
@@ -109,7 +124,7 @@ var formSubmitHandler = function(event){
     // get value from input element
     ingredientName = ingredientInputEl.value.trim();
     // if the ingredient name exist, get the nutrient information and add ingedrient name to localstorage
-    console.log("+ " + ingredientName)
+    
     if (ingredientName) {
         getIngredientInfo(ingredientName);
         if (localStorage.getItem("ingredientsArray")){
