@@ -42,7 +42,7 @@ var getIngredientInfo = function(ingredient) {
                 // set the ingredient description text
                 descriptionEl.textContent = data.foods[0].description;
                 // set the recipe search link for this ingredient
-                recipeLinkEl.innerHTML = "<a href='./recipes.html#" + ingredient + "'>" + ingredient+ "</a>";
+                recipeLinkEl.innerHTML = "<a href='./recipes.html#" + ingredient + "'>" + ingredient.replace("%20", " ") + "</a>";
                 //display the nutrients info data
                 for (var i = 0; i < data.foods[0].foodNutrients.length; i++){ 
                     //create a new row of nutrient info consisting of nutrient name, amount and unit
@@ -51,21 +51,21 @@ var getIngredientInfo = function(ingredient) {
                     
                     //create new column for ingredient name
                     var nutrientNameEl = document.createElement('div');
-                    nutrientNameEl.setAttribute('class', 'col-md-6');
+                    nutrientNameEl.setAttribute('class', 'columns medium-6');
                     nutrientNameEl.setAttribute('id', 'nutrient-'+i);
                     nutrientNameEl.setAttribute('style', ' text-align:left')
                     nutrientNameEl.textContent = data.foods[0].foodNutrients[i].nutrientName;
 
                     //create new column for ingredient amount
                     var nutrientAmountEl = document.createElement('div');
-                    nutrientAmountEl.setAttribute('class', 'col-md-3');
+                    nutrientAmountEl.setAttribute('class', 'columns medium-3');
                     nutrientAmountEl.setAttribute('id', 'amount-'+i);
                     nutrientAmountEl.setAttribute('style', ' text-align:left')
                     nutrientAmountEl.textContent = data.foods[0].foodNutrients[i].value;
 
                     //create new column for unit
                     var nutrientUnitEl = document.createElement('div');
-                    nutrientUnitEl.setAttribute('class', 'col-md-3');
+                    nutrientUnitEl.setAttribute('class', 'columns medium-3');
                     nutrientUnitEl.setAttribute('id', 'unit-'+i);
                     nutrientUnitEl.setAttribute('style', ' text-align:left')
                     nutrientUnitEl.textContent = data.foods[0].foodNutrients[i].unitName;
@@ -87,6 +87,7 @@ var getIngredientInfo = function(ingredient) {
 
                 //reset the recent searches buttons
                 displayRecentSearches();
+                window.location.href = "#nutrients-anchor";
            
             });
         }else {
@@ -95,41 +96,6 @@ var getIngredientInfo = function(ingredient) {
       });
 };
   
-var displayIssues = function(issues) {
-    if (issues.length === 0) {
-        issueContainerEl.textContent = "This repo has no open issues!";
-        return;
-      }
-
-    for (var i = 0; i < issues.length; i++) {
-        // create a link element to take users to the issue on github
-        var issueEl = document.createElement("a");
-        issueEl.classList = "list-item flex-row justify-space-between align-center";
-        issueEl.setAttribute("href", issues[i].html_url);
-        issueEl.setAttribute("target", "_blank");
-        
-        // create span to hold issue title
-        var titleEl = document.createElement("span");
-        titleEl.textContent = issues[i].title;
-
-        // append to container
-        issueEl.appendChild(titleEl);
-
-        // create a type element
-        var typeEl = document.createElement("span");
-
-        // check if issue is an actual issue or a pull request
-        if (issues[i].pull_request) {
-        typeEl.textContent = "(Pull request)";
-        } else {
-        typeEl.textContent = "(Issue)";
-        }
-
-        // append to container
-        issueEl.appendChild(typeEl);
-        issueContainerEl.appendChild(issueEl);
-      }
-};
 
 var formSubmitHandler = function(event){
 

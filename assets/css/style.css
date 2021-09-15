@@ -49,10 +49,13 @@ footer {
   background-color: black;
   color: white;
   flex-wrap: wrap;
-  position: -webkit-sticky;
-  position: sticky;
   font-family: "Helvetica Neue";
 }
+
+img:hover {
+  opacity: 0.5;
+}
+
 /* Add hero here */
 
 .hero {
@@ -116,7 +119,6 @@ body {
   border-radius: .25rem;
 }
 
-
 .info-container {
   margin: 5px 5px 25px 15px;
   
@@ -135,7 +137,7 @@ body {
     margin: 0 auto;
     margin-top: auto;
     margin-bottom: auto;
-    height: 100%;
+    height: auto;
     top: 0;
     left: 0;
     width: 100%;
@@ -158,6 +160,13 @@ body {
     width: 100%;
 
   }
+  
+  .search-outer-container{
+    padding-top: 15px;
+    display: flex;
+   justify-content: center;
+   background-color:darkkhaki;
+  }
 
   .form-input{
     margin-bottom: 5px;
@@ -174,10 +183,11 @@ body {
   }
 
   .card{
-
     background-color: #bab66f;
   }
 
 .search-container{
   border: none;
+  background-color: #bab66f;
+  width: 80%;
 }
