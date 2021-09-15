@@ -195,3 +195,6 @@ body {
   background-color: #bab66f;
   width: 80%;
 }
+.right-justify-text{
+  text-align: right;
+}

@@ -73,7 +73,7 @@
 <div class="row" id="popular-ingredients">
   <div class="columns medium-3">
     <article class="pop-ingredient">
-          <a href="/ingredients.html?ingredient1=tomatoes#nutrients-anchor"><img src="./assets/images/tomatos.jpg" alt="plate of cut tomatoes" /></a>
+          <a href="/ingredients.html?ingredient_name=tomatoes#nutrients-anchor"><img src="./assets/images/tomatos.jpg" alt="plate of cut tomatoes" /></a>
             <div class="ingredient-bio">
               <h7 class="ingredient-macros">Tomatoes <br> 22	kcal | 3.84	g Carbs <br> 0.7	g Protien | 1	g Fiber</h4>
             </div>
@@ -82,7 +82,7 @@
   </div>
   <div class="columns medium-3">
     <article class="pop-ingredient">
-      <a href="/ingredients.html?ingredient1=avocado#nutrients-anchor">
+      <a href="/ingredients.html?ingredient_name=avocado#nutrients-anchor">
       <img src="./assets/images/avocado.jpg" alt="hand holding half an avocado" /></a>
       <div class="ingredient-bio">
         <h7 class="ingredient-macros">Avocado <br> 167	kcal | 8.64	g Carbs <br> 1.96	g Protien | 6.8	g Fiber</h8>
@@ -91,7 +91,7 @@
   </div>
   <div class="columns medium-3">
     <article class="pop-ingredient">
-      <a href="/ingredients.html?ingredient1=beets#nutrients-anchor">
+      <a href="/ingredients.html?ingredient_name=beets#nutrients-anchor">
       <img src="./assets/images/beets.jpg" alt="a raw bunch of red beets" /></a>
       <div class="ingredient-bio">
         <h7 class="ingredient-macros">Beets <br> 43	kcal | 9.56	g Carbs <br> 1.61	g Protien | 2.8	g Fiber</h4>
@@ -100,7 +100,7 @@
   </div>
   <div class="columns medium-3">
     <article class="pop-ingredient">
-      <a href="/ingredients.html?ingredient1=raw%20salmon#nutrients-anchor">
+      <a href="/ingredients.html?ingredient_name=raw%20salmon#nutrients-anchor">
       <img src="./assets/images/salmon.jpg" alt="raw salmon filet" /></a>
       <div class="ingredient-bio">
         <h7 class="ingredient-macros">Salmon <br> 131	kcal | 0	g Carbs <br> 22.2	g Protien | 0	g Fiber</h4>
@@ -124,40 +124,41 @@
 
       <div class="card-body" id="recent-searches">
         <form id="recent-searches" class="card-body"></form>
+        <button id="searchClear" class="btn-2">Clear Recent Searches</button>
       </div>
     </div>
   </div>
   
 
   <div class="columns medium-8">
-    <div id="ingredient-info-container" class="nutrient-table">
+    <div class="nutrient-table">
       <div class="info-container">
         <div class="row">
-          <div class="columns ">
-            <b>Ingredient Description:&nbsp&nbsp&nbsp </b>
+          <div class="columns small-6 right-justify-text">
+            <b>Ingredient Description:</b>
           </div>
-          <div class="columns">
+          <div class="columns small-6">
             <span id="nutrient-description"></span> 
           </div>
         </div>
         <div class="row">
-          <div class="columns">
-            <b>Serving Size:</b>   100 Gr
+          <div class="columns small-6 right-justify-text">
+            <b>Serving Size:</b>
           </div>
-          <div class="columns">
-            <span id="serving-size"></span> 
+          <div class="columns small-6">
+            <span id="serving-size">100 Gr</span> 
           </div>
         </div>
         <div class="row">
-          <div class="columns">
-            <b>Find a Recipe Based on:&nbsp&nbsp&nbsp </b>
+          <div class="columns small-6 right-justify-text">
+            <b>Find a Recipe Based on:</b>
           </div>
-          <div class="columns">
+          <div class="columns small-6">
             <span id="recipe-link"></span> 
           </div>
         </div>
       </div>
-      <div class="row header-row">
+      <div id="ingredient-info-container" class="row header-row">
         <div class="columns medium-6" style="text-align:left"><b>Nutrient Name</b></div>
         <div class="columns medium-3" style="text-align:left"><b>Avg Amount</b></div>
         <div class="columns medium-3" style="text-align:left"><b>Unit</b></div>

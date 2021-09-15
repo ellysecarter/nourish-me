@@ -4,6 +4,7 @@ var ingredientNameEl = document.querySelector("#ingredient-name");
 var ingredientsArray = [];
 var searchOuterEL = document.querySelector("#search-outer-container");
 var searchSectionEl = document.querySelector("#ingredients-search");
+var clearSearchEl = document.createElement("button");
 
 var searchHeaderFormEl = document.querySelector("#search-header");
 var searchFormEl = document.querySelector("#search-form");
@@ -25,8 +26,8 @@ var nutrientsArray  = new Array();
 function setIngredientFromURL() {
     var queryString = document.location.search;
     ingredientName = queryString.split("=")[1];
-    ingredientName = ingredientName.replace("%20", " ");
     if (ingredientName){
+        ingredientName = ingredientName.replace("%20", " ");
         getIngredientInfo(ingredientName);
         if (localStorage.getItem("ingredientsArray")){
             ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
@@ -56,6 +57,7 @@ var getIngredientInfo = function(ingredient) {
                 if (data.totalHits == 0){
                     descriptionEl.textContent = '0 results found for ' + ingredient;
                     descriptionEl.style.color = "red";
+                    clearNutrientsTable();
                     return;
                 }
                 // set the ingredient description text
@@ -176,6 +178,7 @@ var form2SubmitHandler = function(event){
     }
 
 };
+
 var displayRecentSearches = function (){
     if (localStorage.getItem("ingredientsArray")){
     ingredientsButtonsEl.innerHTML = '';
@@ -189,6 +192,14 @@ var displayRecentSearches = function (){
             ingredientSearchBtnEL.setAttribute("class", "btn-2");
             ingredientsButtonsEl.appendChild(ingredientSearchBtnEL);
         }
+        //add "clear recent searches" button
+        var clearSearchBtnEL = document.createElement("button");
+        clearSearchBtnEL.textContent = "Clear recent searches";
+        clearSearchBtnEL.setAttribute("id", "searchClear");
+        clearSearchBtnEL.setAttribute("class", "btn");
+        ingredientsButtonsEl.appendChild(clearSearchBtnEL);
+        clearSearchEl = document.querySelector("#searchClear");
+        clearSearchEl.addEventListener("click", clearSavedRecipes);
     }
     } else{
         return;
@@ -199,10 +210,12 @@ var recentSearchesHandler = function(event){
     event.preventDefault();
     var targetEl = event.target;
     ingredientName = targetEl.getAttribute("ingredient-id");
-
-    document.location.replace("./ingredients.html?ingredient_name=" + ingredientName);
+    if (ingredientName){
+        document.location.replace("./ingredients.html?ingredient_name=" + ingredientName);
+    }else{
+        document.location.replace("./ingredients.html");
+    }
 }
-
 
 function showSearchSection (){
     searchOuterEL.setAttribute("style", "display: flex");
@@ -212,6 +225,16 @@ function hideSearchSection (){
     searchOuterEL.setAttribute("style", "display: none");
 }
 
+function clearNutrientsTable (){
+    nutritionContainerEl.innerHTML = ""
+}
+
+//clears the saved recipes in localStorage
+function clearSavedRecipes() {
+    localStorage.setItem("ingredientsArray",  "");
+    displayRecentSearches();
+}
+
 searchFormEl.addEventListener("submit", form2SubmitHandler);
 searchHeaderFormEl.addEventListener("submit", formSubmitHandler);
 ingredientsButtonsEl.addEventListener("click", recentSearchesHandler);
@@ -219,5 +242,5 @@ ingredientsButtonsEl.addEventListener("click", recentSearchesHandler);
 displayRecentSearches();
 
 setIngredientFromURL();
-// hideSearchSection ();
+
 
