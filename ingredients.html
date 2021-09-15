@@ -7,7 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+   <!-- Compressed CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css"
+   integrity="sha512-ctORkoJVPIlLQR5Kfr4h64mf98Xvdg7h4G2tKAjxBB+r6ppH6QwR8w7lhYqWqjRRCOBW3O4FfEDfeoTeSXahxA=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+   referrerpolicy="no-referrer"></script>
+<!-- Compressed JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"
+   integrity="sha512-1XE+nYLbk5rG30etD2aFFpoJuLs/rWsKV/axKpsuhhkkFd4ljTYxa80U1NNskyyO3VPnIyqrR7PvbbFA4KjKmA=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <title>Nourish Me</title>
@@ -16,118 +29,156 @@
 
 <!-- title and nav bar -->
 <body >
-  <header class="header">
-    <h1 class="app-title"><i class="fa-solid fa-user-chef"></i><a href="https://ellysecarter.github.io/nourish-me/"> Nourish Me!</a></h1>
-
+  <header>
+    <h1 class="name">
+      <!-- <img src="./assets/images/avatar.jpeg" alt="Wendy Nguyen" style="vertical-align:middle"> -->
+      <a href="/" style="text-decoration: none">
+        nourishMe
+  </h1>
     <nav>
-        <ul>
-            <li>
-                <a href="./index.html">Home</a>
-            </li>
-            <li>
-                <a href="./recipes.html">Recipes</a>
-            </li>
-            <li>
-                <a href="./ingredients.html">Ingredients</a>
-            </li>
-            <li>
-                <a href="./contact.html">Contact</a>
-            </li>
-        </ul>
+      <!-- Unordered list element -->
+      <ul>
+        <!-- List item element-->
+        <li>
+          <!-- Anchor element -->
+          <a href="./index.html">home</a>
+        </li>
+        <li>
+          <a href="./recipes.html">recipes</a>
+        </li>
+        <li>
+          <a href="./ingredients.html">ingredients</a>
+        </li>
+        <li>
+          <a href="./contact.html">contact</a>
+        </li>
+      </ul>
     </nav>
-</header>
-
-<!-- hero -->
-<!-- <section class="hero">
-    <div class="hero-cta">
-        <h2>
-            Looking for a recipe is easy, but finding out the nutritional content of each ingredient in the recipe can be tedious and daunting.
-
-            <br>
-            <h2>Nourish Me! got you covered!</h2>
-            <h3>It's quick and easy!</h3>
-            <h3>Search a recipe or food item below and we'll do the rest.</h3>
-
-        </h2>
-    </div>
-</section> -->
+  </header>
 
 <main class="search ">
+
 <div class="row">
-  <div class="col-12 col-md-4">
-    <div class="card" id="search-container">
-      <h3 class="card-header">Find an ingredient:</h3>
+  <form id="search-header" class="search-header">
+    <b>Ingredients</b><br>
+   <input name="ingredient1" id="ingredient" type="text" placeholder="Find an ingredient" class="form-input" onfocus="this.placeholder = ''"
+   onblur="this.placeholder = 'Find an ingredient'"/>
+  </form>
+</div>
+
+<div class="popular-header">
+  <b>Popular Ingredients</b>
+</div>
+<section class="popular">
+<div class="row" id="popular-ingredients">
+  <div class="columns medium-3">
+    <article class="pop-ingredient">
+          <a href="/ingredients.html?ingredient1=tomatoes"><img src="./assets/images/tomatos.jpg" alt="plate of cut tomatoes" /></a>
+            <div class="ingredient-bio">
+              <h7 class="ingredient-macros">Tomatoes <br> 22	kcal | 3.84	g Carbs <br> 0.7	g Protien | 1	g Fiber</h4>
+            </div>
+        
+    </article>
+  </div>
+  <div class="columns medium-3">
+    <article class="pop-ingredient">
+      <a href="/ingredients.html?ingredient1=avocado">
+      <img src="./assets/images/avocado.jpg" alt="hand holding half an avocado" /></a>
+      <div class="ingredient-bio">
+        <h7 class="ingredient-macros">Avocado <br> 167	kcal | 8.64	g Carbs <br> 1.96	g Protien | 6.8	g Fiber</h8>
+        </div>
+    </article>
+  </div>
+  <div class="columns medium-3">
+    <article class="pop-ingredient">
+      <a href="/ingredients.html?ingredient1=beets">
+      <img src="./assets/images/beets.jpg" alt="a raw bunch of red beets" /></a>
+      <div class="ingredient-bio">
+        <h7 class="ingredient-macros">Beets <br> 43	kcal | 9.56	g Carbs <br> 1.61	g Protien | 2.8	g Fiber</h4>
+      </div>
+    </article>
+  </div>
+  <div class="columns medium-3">
+    <article class="pop-ingredient">
+      <a href="/ingredients.html?ingredient1=raw%20salmon">
+      <img src="./assets/images/salmon.jpg" alt="raw salmon filet" /></a>
+      <div class="ingredient-bio">
+        <h7 class="ingredient-macros">Salmon <br> 131	kcal | 0	g Carbs <br> 22.2	g Protien | 0	g Fiber</h4>
+      </div>
+    </article>
+  </div>
+</div>
+</section>
+<a id="nutrients-anchor"></a>
+<div id="search-outer-container" class="search-outer-container" style="display: none;">
+  <div id="ingredients-search"  class="search-container" >
+  <div class="columns medium-4">
+    <div  id="search-container">
       <form id="search-form" class="card-body">
-        <input name="ingredient" id="ingredient" type="text" autofocus="true" class="form-input" />
+        <input name="ingredient" id="ingredient" type="text"  placeholder="Find an ingredient" class="form-input" onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Find an ingredient'"/>
         <button type="submit" class="btn">Search</button>
       </form>
-      <hr>
     </div>
-    <div class="card">
+    <div>
+
       <div class="card-body" id="recent-searches">
         <form id="recent-searches" class="card-body"></form>
       </div>
     </div>
   </div>
   
-  <div class="col-12 col-md-8">
-    <div id="ingredient-info-container" class="card nutrient-table">
+
+  <div class="columns medium-8">
+    <div id="ingredient-info-container" class="nutrient-table">
       <div class="info-container">
         <div class="row">
-          <div class="column">
-            <h3>Description: </h3>
+          <div class="columns ">
+            <b>Ingredient Description:&nbsp&nbsp&nbsp </b>
           </div>
-          <div class="column">
-            <span id="nutrient-description" style="font-size:16pt"></span> 
-          </div>
-        </div>
-        <div class="row">
-          <div class="column">
-            <h3>Serving Size: </h3>
-          </div>
-          <div class="column">
-            <span id="serving-size"style="font-size:16pt"></span> 
+          <div class="columns">
+            <span id="nutrient-description"></span> 
           </div>
         </div>
         <div class="row">
-          <div class="column">
-            <h3>Find a recipe based on: </h3>
+          <div class="columns">
+            <b>Serving Size:</b>   100 Gr
           </div>
-          <div class="column">
-            <span id="recipe-link"style="font-size:16pt"></span> 
+          <div class="columns">
+            <span id="serving-size"></span> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns">
+            <b>Find a Recipe Based on:&nbsp&nbsp&nbsp </b>
+          </div>
+          <div class="columns">
+            <span id="recipe-link"></span> 
           </div>
         </div>
       </div>
       <div class="row header-row">
-        <div class="col-md-6" style="text-align:left"><h2>Nutrient Name</h2></div>
-        <div class="col-md-3" style="text-align:left"><h2>Average Amount</h2></div>
-        <div class="col-md-3" style="text-align:left"><h2>Unit</h2></div>
+        <div class="columns medium-6" style="text-align:left"><b>Nutrient Name</b></div>
+        <div class="columns medium-3" style="text-align:left"><b>Avg Amount</b></div>
+        <div class="columns medium-3" style="text-align:left"><b>Unit</b></div>
+
       </div>
     </div>
   </div>
 </div>
 
-<!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
-<style>
-  .node:hover{
-    stroke-width: 7px !important;
-    opacity: 1 !important;
-  }
-  </style>
+</div>
 
+<footer>
+  Ⓒ DEJSW Studio 2021
+</footer>
 </main>
 
-  <footer>
-    Ⓒ DEJSW Studio 2021
-  </footer>
-<!-- Load d3.js -->
-<script src="https://d3js.org/d3.v4.js"></script>
 
-<!-- Color palette -->
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
 
 <script src="./assets/js/ingredients.js"></script>
 </body>
 
 </html>
+

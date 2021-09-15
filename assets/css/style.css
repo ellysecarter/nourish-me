@@ -13,21 +13,22 @@ header {
     background-position: 80%;
     background-attachment: fixed;
     z-index: 9999;
-    font-family: cursive;
+    font-family: "Helvetica Neue";
+    background-color: black;
 }
 
 header h1 {
-    font-weight: bold;
-    font-size: 60px;
-    color: #630e08;
+    /* font-weight: bold; */
+    font-size: 35px;
+    color: ##ffffff;
     margin: 0;
-    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
-    text-shadow: 0 0 20px white;
+
 }
 
 header a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: white;
+
 }
 
 header nav ul {
@@ -40,13 +41,22 @@ header nav ul {
 
 header nav ul li a {
   padding: 10px 15px;
-  color: #630e08;
+  color: #white;
   font-size: 1.55vw;
-  border-bottom: #630e08;
-  text-decoration: underline 4px;
-  text-underline-offset: 8px;
-  text-decoration-color: #630e08;
-  text-shadow: 0 0 20px white;
+}
+
+footer {
+  padding: 10px 35px;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  flex-wrap: wrap;
+  font-family: "Helvetica Neue";
+}
+
+img:hover {
+  opacity: 0.5;
+
 }
 
 /* Add hero here */
@@ -80,19 +90,19 @@ header nav ul li a {
 body {
   margin: 0;
   padding: 0;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Helvetica Neue";
   line-height: 1.5;
   font-size: 16px;
 }
 
-.search {
+.search-header {
   text-align: center;
+  margin: 0 auto
 }
 
-
-.btn-2 {
+.btn {
   color: black;
-  background-color: lightgray;
+  background-color:olive;
   width:100%;
   border: none;
   margin: 5px ;
@@ -101,6 +111,18 @@ body {
   border-radius: .25rem;
 }
 
+.btn-2 {
+  color:white;
+  background-color: darkolivegreen;
+  width:100%;
+  border: none;
+  margin: 5px ;
+  padding: 5px 0 5px 0;
+  font-size: large;
+  border-radius: .25rem;
+}
+
+<<<<<<< HEAD
 .btn {
   color: black;
   background-color: lightsteelblue;
@@ -121,9 +143,83 @@ body {
 .header-row {
   background-color: lightsteelblue; /* added this */
   }
+=======
+
+.info-container {
+  margin: 5px 5px 25px 15px;
+  
+}
+>>>>>>> fcd-prototype
 
   .nutrient-table{
     margin: 5px 5px 5px 5px;
     padding: 15px 25px 15px 25px;
+<<<<<<< HEAD
     
   }
+=======
+    /* text-align: right; */
+    
+  }
+
+  .popular{
+    display: flex;
+    background-color: cornsilk;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .popular-header{
+    background-color: cornsilk;
+    text-align: center;
+  }
+  .search{
+    display: block;
+    background-color:darkkhaki;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+  }
+  
+  .search-outer-container{
+    padding-top: 15px;
+    display: flex;
+   justify-content: center;
+   background-color:darkkhaki;
+  }
+
+  .form-input{
+    margin-bottom: 5px;
+    border: none;
+    width: 100%;
+    outline: none;
+  }
+
+  .pop-ingredient{
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+
+  }
+
+  .card{
+    background-color: #bab66f;
+  }
+
+.search-container{
+  border: none;
+  background-color: #bab66f;
+  width: 80%;
+}
+>>>>>>> fcd-prototype

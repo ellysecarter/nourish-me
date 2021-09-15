@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  <title>Nourish Me</title>
+</head>
+
+<body class="flex-column min-100-vh">
+  
+  <header class="hero">
+    <!-- <h1 class="app-title">Ingredient Search for: <span id="ingredient-name" style="color:orange"></span></h1> -->
+    <div class="container" id="nutrition-container">
+      <div class="row">
+        <div class="col-md-3" >
+          <h2>Ingredient Description</h2>
+          <form class="card-body" id="search-form" style="display: none">
+            <input name="ingredient" id="ingredient" type="text" autofocus="true" class="form-input" />
+            <button type="submit" class="button">Search</button>
+          </form>
+        </div>
+        <div class="col-md-0">
+          <h4><span id="nutrient-description"></h4></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"><h2>Nutrient Name</h2></div>
+        <div class="col-md-3"><h2>Average Amount</h2></div>
+        <div class="col-md-3"><h2>Unit</h2></div>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <div id="ingredient-container" class="list-group"></div>
+  </main>
+  <script src="./single.js"></script>
+</body>
+
+</html>
