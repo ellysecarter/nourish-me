@@ -2,7 +2,7 @@ var nutritionContainerEl = document.querySelector("#ingredient-info-container");
 var descriptionEl = document.querySelector("#nutrient-description");
 var ingredientNameEl = document.querySelector("#ingredient-name");
 var ingredientsArray = [];
-
+var searchOuterEL = document.querySelector("#search-outer-container");
 var searchSectionEl = document.querySelector("#ingredients-search");
 var searchFormEl = document.querySelector("#search-form");
 var ingredientInputEl = document.querySelector("#ingredient");
@@ -153,11 +153,11 @@ var recentSearchesHandler = function(event){
 }
 
 function showSearchSection (){
-    searchSectionEl.setAttribute("style", "display: flex");
+    searchOuterEL.setAttribute("style", "display: flex");
 }
 
 function hideSearchSection (){
-    searchSectionEl.setAttribute("style", "display: none");
+    searchOuterEL.setAttribute("style", "display: none");
 }
 
 searchFormEl.addEventListener("submit", formSubmitHandler);

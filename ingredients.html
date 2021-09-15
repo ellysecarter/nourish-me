@@ -58,7 +58,7 @@
 <div class="row">
   <form id="search-header" class="search-header">
     <b>Ingredients</b><br>
-   <input name="ingredient1" id="ingredient" type="text" autofocus="true" placeholder="Find an ingredient" class="form-input" onfocus="this.placeholder = ''"
+   <input name="ingredient1" id="ingredient" type="text" placeholder="Find an ingredient" class="form-input" onfocus="this.placeholder = ''"
    onblur="this.placeholder = 'Find an ingredient'"/>
   </form>
 </div>
@@ -107,8 +107,8 @@
 </div>
 </section>
 <a id="nutrients-anchor"></a>
-<div class="search-outer-container">
-  <div id="ingredients-search" style="display: none;" class="search-container" >
+<div id="search-outer-container" class="search-outer-container" style="display: none;">
+  <div id="ingredients-search"  class="search-container" >
   <div class="columns medium-4">
     <div  id="search-container">
       <form id="search-form" class="card-body">
@@ -128,7 +128,7 @@
     <div id="ingredient-info-container" class="nutrient-table">
       <div class="info-container">
         <div class="row">
-          <div class="columns">
+          <div class="columns ">
             <b>Ingredient Description:&nbsp&nbsp&nbsp </b>
           </div>
           <div class="columns">
