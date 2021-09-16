@@ -28,6 +28,7 @@ function setIngredientFromURL() {
     ingredientName = queryString.split("=")[1];
     if (ingredientName){
         ingredientName = ingredientName.replace("%20", " ");
+        
         getIngredientInfo(ingredientName);
         if (localStorage.getItem("ingredientsArray")){
             ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
@@ -121,7 +122,6 @@ var getIngredientInfo = function(ingredient) {
 };
 
 var formSubmitHandler = function(event){
-
     event.preventDefault();
     // get value from input element
     ingredientName = ingredientInputEl.value.trim();
@@ -144,14 +144,14 @@ var formSubmitHandler = function(event){
         ingredientInputEl.value = "";
     // if ingredient name is blank, alert user
     } else {
-            alert("Please enter an ingredient username");
+        modal.style.display = "block";
+            // alert("Please enter an ingredient username");
 
     }
 
 };
 
 var form2SubmitHandler = function(event){
-
     event.preventDefault();
     // get value from input element
     ingredientName = ingredientInput2El.value.trim();
@@ -173,7 +173,8 @@ var form2SubmitHandler = function(event){
         ingredientInputEl.value = "";
     // if ingredient name is blank, alert user
     } else {
-            alert("Please enter an ingredient.");
+        modal.style.display = "block";
+            // alert("Please enter an ingredient.");
 
     }
 
@@ -233,6 +234,25 @@ function clearNutrientsTable (){
 function clearSavedRecipes() {
     localStorage.setItem("ingredientsArray",  "");
     displayRecentSearches();
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 searchFormEl.addEventListener("submit", form2SubmitHandler);
