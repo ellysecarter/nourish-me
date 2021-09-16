@@ -205,3 +205,11 @@ body {
 .right-justify-text{
   text-align: right;
 }
+
+
+/* contact page */
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
