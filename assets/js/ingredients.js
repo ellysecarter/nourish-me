@@ -28,7 +28,7 @@ function setIngredientFromURL() {
     ingredientName = queryString.split("=")[1];
     if (ingredientName){
         ingredientName = ingredientName.replace("%20", " ");
-        
+
         getIngredientInfo(ingredientName);
         if (localStorage.getItem("ingredientsArray")){
             ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
@@ -64,7 +64,7 @@ var getIngredientInfo = function(ingredient) {
                 // set the ingredient description text
                 descriptionEl.textContent = data.foods[0].description;
                 // set the recipe search link for this ingredient
-                recipeLinkEl.innerHTML = "<a href='./recipes.html#" + ingredient + "'>" + ingredient+ "</a>";
+                recipeLinkEl.innerHTML = "<a href='./recipes.html?ingredient_name=" + ingredient + "'>" + ingredient+ "</a>";
                 //display the nutrients info data
                 for (var i = 0; i < data.foods[0].foodNutrients.length; i++){ 
                     //create a new row of nutrient info consisting of nutrient name, amount and unit
@@ -125,7 +125,7 @@ var formSubmitHandler = function(event){
     // get value from input element
     ingredientName = ingredientInputEl.value.trim();
     // if the ingredient name exist, get the nutrient information and add ingedrient name to localstorage
-    
+
     if (ingredientName) {
         getIngredientInfo(ingredientName);
         if (localStorage.getItem("ingredientsArray")){
