@@ -8,7 +8,7 @@ function loadSavedRecipes() {
 //saves the passed recipe to localStorage
 function saveRecipe(title, id) {
     var savedRecipes = JSON.parse(window.localStorage.getItem("SavedRecipes")) ?? "";
-    savedRecipes = `<button onclick="getRecipeSaved(${id})">${title}</button><br>`+savedRecipes;
+    savedRecipes = `<button onclick="getRecipeSaved(${id})" class="btn">${title}</button><br>`+savedRecipes;
     window.localStorage.setItem("SavedRecipes", JSON.stringify(savedRecipes));
 }
 
@@ -16,6 +16,11 @@ function saveRecipe(title, id) {
 function clearSavedRecipes() {
     window.localStorage.setItem("SavedRecipes", JSON.stringify(""));
     loadSavedRecipes();
+}
+
+//shows the section containing recent searches and recipe info
+function showSearchSection() {
+    document.querySelector("#search-outer-container").setAttribute("style", "display: flex");
 }
 
 //sets the displayed recipe to the recipe with the passed id as well as saves it in localStorage
@@ -77,6 +82,7 @@ function getRecipeNameSearch() {
         success: function(res){
             setSaveRecipe(res.results[0].id);
             setInstructions(res.results[0].id);
+            showSearchSection();
         }
     });
 }
@@ -89,6 +95,7 @@ function getRecipeIngredientSearch() {
         success: function(res){
             setSaveRecipe(res[0].id);
             setInstructions(res[0].id);
+            showSearchSection();
         }
     });
 }
@@ -97,10 +104,11 @@ function getRecipeIngredientSearch() {
 //is called on load to search for one recipe by ingredient using what comes after # in the url and call other functions to display it
 function getRecipeIngredientURL() {
     $.ajax({
-        url: `https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients=${window.location.hash.substr(1)}&apiKey=${API_KEY}`,
+        url: `https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients=${document.location.search.split("=")[1]}&apiKey=${API_KEY}`,
         success: function(res){
             setSaveRecipe(res[0].id);
             setInstructions(res[0].id);
+            showSearchSection();
         }
     });
 }
@@ -109,6 +117,7 @@ function getRecipeIngredientURL() {
 function getRecipeSaved(id) {
     setSaveRecipe(id);
     setInstructions(id);
+    showSearchSection();
 }
 
 //loads button functions and check if a recipe needs to be found based on url
@@ -118,7 +127,7 @@ window.onload = function() {
     document.getElementById("searchClear").addEventListener("click", clearSavedRecipes);
 
     loadSavedRecipes();
-    if (location.hash != "") {
+    if (document.location.search.split("=")[1] != "") {
         getRecipeIngredientURL();
     }
 }

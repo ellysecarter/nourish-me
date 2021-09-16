@@ -1,5 +1,3 @@
-  
-
 /* apply styles to <header> */
 header {
     padding: 10px 25px;
@@ -20,7 +18,7 @@ header {
 header h1 {
     /* font-weight: bold; */
     font-size: 35px;
-    color: ##ffffff;
+    color: #ffffff;
     margin: 0;
 
 }
@@ -121,7 +119,12 @@ body {
 }
 
 .search-header input{
-  width: 250px
+  width: 250px;
+}
+
+.search-header button {
+  padding: 9.5px;
+  width: 250px;
 }
 
 .btn {
@@ -149,14 +152,13 @@ body {
 
 .info-container {
   margin: 5px 5px 25px 15px;
-  
+
 }
 
   .nutrient-table{
     margin: 5px 5px 5px 5px;
     padding: 15px 25px 15px 25px;
     /* text-align: right; */
-    
   }
 
   .popular{
@@ -188,12 +190,12 @@ body {
     width: 100%;
 
   }
-  
+
   .search-outer-container{
     padding-top: 15px;
     display: flex;
-   justify-content: center;
-   background-color:darkkhaki;
+    justify-content: center;
+    background-color:darkkhaki;
   }
 
   .form-input{
@@ -201,7 +203,6 @@ body {
     border: none;
     width: 25%;
     outline: none;
-    
   }
 
   .pop-ingredient{
