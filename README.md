@@ -4,7 +4,7 @@
 
 ### A site that not only gives you the recipes, but provides the nutritional breakdown of each ingredient.
 
-![screenshot](assets/images/screenshot2)
+![screenshot](assets/images/screenshot2.png)
 
 ## Deployed application:
 https://ellysecarter.github.io/nourish-me/ 
@@ -15,8 +15,8 @@ https://ellysecarter.github.io/nourish-me/
 * JavaScript
 * Foundation
 * jQuery
-* Spoonacular API https://spoonacular.com/food-api 
-* FCD API https://fdc.nal.usda.gov/api-guide.html 
+* [Spoonacular API](https://spoonacular.com/food-api)
+* [FCD API](https://fdc.nal.usda.gov/api-guide.html) 
 
 ## Features
 * Search by dish or single ingredient on recipes page
