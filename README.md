@@ -28,15 +28,15 @@ https://ellysecarter.github.io/nourish-me/
 
 
 ## Stock images provided by:
-* https://unsplash.com/@sunorwind
-* https://unsplash.com/@emmalejane
-* https://unsplash.com/@nadineprimeau
-* https://unsplash.com/@disi_03 
+* [sunorwind](https://unsplash.com/@sunorwind)
+* [Emma-Jane Hobden](https://unsplash.com/@emmalejane)
+* [Nadine Primeau](https://unsplash.com/@nadineprimeau)
+* [Disiana Caballero](https://unsplash.com/@disi_03) 
 
 
 ## Contributors
-* Wendy Nguyen @wendyqnguyen 
-* Dimitrius M. Brown @TheMagnificentDOMB
-* Ellyse Carter @ellysecarter 
-* Sean Hool @HoolSeanalan 
-* Josue Santos-Aguilera @ok-josue 
+* Wendy Nguyen [@wendyqnguyen](https://github.com/wendyqnguyen) 
+* Dimitrius M. Brown [@TheMagnificentDOMB](https://github.com/TheMagnificentDOMB)
+* Ellyse Carter [@ellysecarter](https://github.com/ellysecarter)
+* Sean Hool [@HoolSeanalan](https://github.com/HoolSeanalan) 
+* Josue Santos-Aguilera [@ok-josue](https://github.com/ok-josue) 
