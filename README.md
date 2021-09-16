@@ -1,34 +1,42 @@
-# Nourish Me
+# nourishMe 
 
-#### This is a site made by HTML, CSS, JavaScript, Bootstrap, Moment, and jQuery 
+## Let's get healthy!
 
-## Description
+### A site that not only gives you the recipes, but provides the nutritional breakdown of each ingredient.
 
-This website uses two Web API's that fetch recipes after you search for a dish or food item and also provides the nutritional value of each food item in the recipe once it is clicked. 
+![screenshot](assets/images/screenshot2)
 
-It also saves your search history which can be found in your console log. It displays the recently searched recipes on the left side of the screen to be easily accessed while on the site.
-
-
-## Live site 
+## Deployed application:
 https://ellysecarter.github.io/nourish-me/ 
-
-## Known Bugs
-None known
-
 
 ## Technologies Used
 * HTML
 * CSS
 * JavaScript
-* Moment
+* Foundation
 * jQuery
+* Spoonacular API https://spoonacular.com/food-api 
+* FCD API https://fdc.nal.usda.gov/api-guide.html 
 
-## Contributors and Github profiles
-* Wendy Nguyen https://github.com/wendyqnguyen 
-* Dimitrius M. Brown https://github.com/TheMagnificentDOMB
-* Ellyse Carter https://github.com/ellysecarter 
-* Sean Hool https://github.com/HoolSeanalan 
-* Josue Santos-Aguilera https://github.com/ok-josue/ 
+## Features
+* Search by dish or single ingredient on recipes page
+* A list of ingredients will populate as well as a link to a full recipe 
+* Each ingredient on the recipe's page can be clicked which will bring you to the ingredients page
+* Ingredients page will provide description, serving size, and full nutritional breakdown of the ingredient
+* Recent searches will be saved on both recipe and ingredient page
+* You can clear your recent searches
 
 
-![screenshot](assets/images/screenshot.png)
+## Stock images provided by:
+* https://unsplash.com/@sunorwind
+* https://unsplash.com/@emmalejane
+* https://unsplash.com/@nadineprimeau
+* https://unsplash.com/@disi_03 
+
+
+## Contributors
+* Wendy Nguyen @wendyqnguyen 
+* Dimitrius M. Brown @TheMagnificentDOMB
+* Ellyse Carter @ellysecarter 
+* Sean Hool @HoolSeanalan 
+* Josue Santos-Aguilera @ok-josue 

@@ -2,14 +2,9 @@ var nutritionContainerEl = document.querySelector("#ingredient-info-container");
 var descriptionEl = document.querySelector("#nutrient-description");
 var ingredientNameEl = document.querySelector("#ingredient-name");
 var ingredientsArray = [];
-var searchOuterEL = document.querySelector("#search-outer-container");
-var searchSectionEl = document.querySelector("#ingredients-search");
-var clearSearchEl = document.createElement("button");
-
-var searchHeaderFormEl = document.querySelector("#search-header");
+var searchheaderFormEl = document.querySelector("#search-header");
 var searchFormEl = document.querySelector("#search-form");
 var ingredientInputEl = document.querySelector("#ingredient");
-var ingredientInput2El = document.querySelector("#ingredient2");
 var recipeLinkEl = document.querySelector("#recipe-link");
 var ingredientsButtonsEl = document.querySelector("#recent-searches");
 var ingredientName;
@@ -23,24 +18,12 @@ var currentDateEl =  document.querySelector("#current-date");
 var currentIconEl =  document.querySelector("#current-weather-icon");
 var nutrientsArray  = new Array();
 
-function setIngredientFromURL() {
+function getIngredientName() {
     var queryString = document.location.search;
     ingredientName = queryString.split("=")[1];
+    ingredientName = ingredientName.replace("%20", " ");
     if (ingredientName){
-        ingredientName = ingredientName.replace("%20", " ");
         getIngredientInfo(ingredientName);
-        if (localStorage.getItem("ingredientsArray")){
-            ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
-
-            var idx = ingredientsArray.length;
-            ingredientsArray[idx] = ingredientName;
-            localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
-        } else {
-            ingredientsArray[0] = ingredientName;
-            localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
-        }
-        showSearchSection ();
-
     }else {
         return;
       }
@@ -49,17 +32,11 @@ function setIngredientFromURL() {
 
 var getIngredientInfo = function(ingredient) {
     var apiUrl = "https://api.nal.usda.gov/fdc/v1/foods/search?api_key=CaaqbdHoAR2KavNuAQFcBRRv7vL4gDF78ENsyxMu&query=" + ingredient + "&dataType=Survey (FNDDS)&pagesize=5";
-
+    
     fetch(apiUrl).then(function(response) {
         // request was successful
         if (response.ok) {
             response.json().then(function(data) {
-                if (data.totalHits == 0){
-                    descriptionEl.textContent = '0 results found for ' + ingredient;
-                    descriptionEl.style.color = "red";
-                    clearNutrientsTable();
-                    return;
-                }
                 // set the ingredient description text
                 descriptionEl.textContent = data.foods[0].description;
                 // set the recipe search link for this ingredient
@@ -72,23 +49,21 @@ var getIngredientInfo = function(ingredient) {
                     
                     //create new column for ingredient name
                     var nutrientNameEl = document.createElement('div');
-                    nutrientNameEl.setAttribute('class', 'columns medium-6');
+                    nutrientNameEl.setAttribute('class', 'col-md-6');
                     nutrientNameEl.setAttribute('id', 'nutrient-'+i);
                     nutrientNameEl.setAttribute('style', ' text-align:left')
                     nutrientNameEl.textContent = data.foods[0].foodNutrients[i].nutrientName;
 
                     //create new column for ingredient amount
                     var nutrientAmountEl = document.createElement('div');
-
-                    nutrientAmountEl.setAttribute('class', 'columns medium-3');
+                    nutrientAmountEl.setAttribute('class', 'col-md-3');
                     nutrientAmountEl.setAttribute('id', 'amount-'+i);
                     nutrientAmountEl.setAttribute('style', ' text-align:left')
                     nutrientAmountEl.textContent = data.foods[0].foodNutrients[i].value;
 
                     //create new column for unit
                     var nutrientUnitEl = document.createElement('div');
-
-                    nutrientUnitEl.setAttribute('class', 'columns medium-3');
+                    nutrientUnitEl.setAttribute('class', 'col-md-3');
                     nutrientUnitEl.setAttribute('id', 'unit-'+i);
                     nutrientUnitEl.setAttribute('style', ' text-align:left')
                     nutrientUnitEl.textContent = data.foods[0].foodNutrients[i].unitName;
@@ -107,17 +82,64 @@ var getIngredientInfo = function(ingredient) {
 
 
                 }
-                // go to the nutrients anchor
-                window.location.href = "#nutrients-anchor";
+
                 //reset the recent searches buttons
                 displayRecentSearches();
            
-
             });
         }else {
             document.location.replace("./index.html");
         }
       });
+};
+  
+var displayIssues = function(issues) {
+    if (issues.length === 0) {
+        issueContainerEl.textContent = "This repo has no open issues!";
+        return;
+      }
+
+    for (var i = 0; i < issues.length; i++) {
+        // create a link element to take users to the issue on github
+        var issueEl = document.createElement("a");
+        issueEl.classList = "list-item flex-row justify-space-between align-center";
+        issueEl.setAttribute("href", issues[i].html_url);
+        issueEl.setAttribute("target", "_blank");
+        
+        // create span to hold issue title
+        var titleEl = document.createElement("span");
+        titleEl.textContent = issues[i].title;
+
+        // append to container
+        issueEl.appendChild(titleEl);
+
+        // create a type element
+        var typeEl = document.createElement("span");
+
+        // check if issue is an actual issue or a pull request
+        if (issues[i].pull_request) {
+        typeEl.textContent = "(Pull request)";
+        } else {
+        typeEl.textContent = "(Issue)";
+        }
+
+        // append to container
+        issueEl.appendChild(typeEl);
+        issueContainerEl.appendChild(issueEl);
+      }
+};
+
+var displayWarning = function(repo) {
+    // add text to warning container
+    limitWarningEl.textContent = "To see more than 30 issues, visit ";
+    
+    var linkEl = document.createElement("a");
+    linkEl.textContent = "See More Issues on GitHub.com";
+    linkEl.setAttribute("href", "https://github.com/" + repo + "/issues");
+    linkEl.setAttribute("target", "_blank");
+  
+    // append to warning container
+    limitWarningEl.appendChild(linkEl);
 };
 
 var formSubmitHandler = function(event){
@@ -126,12 +148,11 @@ var formSubmitHandler = function(event){
     // get value from input element
     ingredientName = ingredientInputEl.value.trim();
     // if the ingredient name exist, get the nutrient information and add ingedrient name to localstorage
-    
     if (ingredientName) {
         getIngredientInfo(ingredientName);
         if (localStorage.getItem("ingredientsArray")){
             ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
-
+            
             var idx = ingredientsArray.length;
             ingredientsArray[idx] = ingredientName;
             localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
@@ -139,45 +160,15 @@ var formSubmitHandler = function(event){
             ingredientsArray[0] = ingredientName;
             localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
         }
-
         // clear the search field 
         ingredientInputEl.value = "";
-    // if ingredient name is blank, alert user
+    // if city name is blank, alert user
     } else {
-            alert("Please enter an ingredient username");
-
+            alert("Please enter a city username");
     }
 
 };
 
-var form2SubmitHandler = function(event){
-
-    event.preventDefault();
-    // get value from input element
-    ingredientName = ingredientInput2El.value.trim();
-    // if the ingredient name exist, get the nutrient information and add ingedrient name to localstorage
-    if (ingredientName) {
-        getIngredientInfo(ingredientName);
-        if (localStorage.getItem("ingredientsArray")){
-            ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
-
-            var idx = ingredientsArray.length;
-            ingredientsArray[idx] = ingredientName;
-            localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
-        } else {
-            ingredientsArray[0] = ingredientName;
-            localStorage.setItem("ingredientsArray", JSON.stringify(ingredientsArray));
-        }
-
-        // clear the search field 
-        ingredientInputEl.value = "";
-    // if ingredient name is blank, alert user
-    } else {
-            alert("Please enter an ingredient.");
-
-    }
-
-};
 
 var displayRecentSearches = function (){
     if (localStorage.getItem("ingredientsArray")){
@@ -192,14 +183,6 @@ var displayRecentSearches = function (){
             ingredientSearchBtnEL.setAttribute("class", "btn-2");
             ingredientsButtonsEl.appendChild(ingredientSearchBtnEL);
         }
-        //add "clear recent searches" button
-        var clearSearchBtnEL = document.createElement("button");
-        clearSearchBtnEL.textContent = "Clear recent searches";
-        clearSearchBtnEL.setAttribute("id", "searchClear");
-        clearSearchBtnEL.setAttribute("class", "btn");
-        ingredientsButtonsEl.appendChild(clearSearchBtnEL);
-        clearSearchEl = document.querySelector("#searchClear");
-        clearSearchEl.addEventListener("click", clearSavedRecipes);
     }
     } else{
         return;
@@ -210,37 +193,13 @@ var recentSearchesHandler = function(event){
     event.preventDefault();
     var targetEl = event.target;
     ingredientName = targetEl.getAttribute("ingredient-id");
-    if (ingredientName){
-        document.location.replace("./ingredients.html?ingredient_name=" + ingredientName);
-    }else{
-        document.location.replace("./ingredients.html");
-    }
+
+    document.location.replace("./ingredients.html?ingredient_name=" + ingredientName);
 }
 
-function showSearchSection (){
-    searchOuterEL.setAttribute("style", "display: flex");
-}
-
-function hideSearchSection (){
-    searchOuterEL.setAttribute("style", "display: none");
-}
-
-function clearNutrientsTable (){
-    nutritionContainerEl.innerHTML = ""
-}
-
-//clears the saved recipes in localStorage
-function clearSavedRecipes() {
-    localStorage.setItem("ingredientsArray",  "");
-    displayRecentSearches();
-}
-
-searchFormEl.addEventListener("submit", form2SubmitHandler);
-searchHeaderFormEl.addEventListener("submit", formSubmitHandler);
+searchFormEl.addEventListener("submit", formSubmitHandler);
+searchheaderFormEl.addEventListener("submit", formSubmitHandler);
 ingredientsButtonsEl.addEventListener("click", recentSearchesHandler);
 
 displayRecentSearches();
-
-setIngredientFromURL();
-
-
+getIngredientName();

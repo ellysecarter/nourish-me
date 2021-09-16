@@ -1,4 +1,4 @@
-const API_KEY = "66f53e7e0ca942c9806998c27a0847af"
+const API_KEY = "8747ec5f79834624a174d139366ac149"
 
 //loads previous searches saved in localStorage
 function loadSavedRecipes() {

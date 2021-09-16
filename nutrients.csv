@@ -1,0 +1,66 @@
+Nutrient Name,Average Amount,Unit,
+Protein,10.5,G,
+Total lipid (fat),21,G,
+Carbohydrate, by difference,37.6,G
+Energy,383,KCAL,
+Alcohol, ethyl,0,G
+Water,27.3,G,
+Caffeine,0,MG,
+Theobromine,0,MG,
+Sugars, total including NLEA,3.38,G
+Fiber, total dietary,2.2,G
+Calcium, Ca,62,MG
+Iron, Fe,2.53,MG
+Magnesium, Mg,17,MG
+Phosphorus, P,463,MG
+Potassium, K,178,MG
+Sodium, Na,1070,MG
+Zinc, Zn,0.83,MG
+Copper, Cu,0.084,MG
+Selenium, Se,17,UG
+Retinol,17,UG,
+Vitamin A, RAE,17,UG
+Carotene, beta,0,UG
+Carotene, alpha,0,UG
+Vitamin E (alpha-tocopherol),0.46,MG,
+Vitamin D (D2 + D3),0.1,UG,
+Cryptoxanthin, beta,0,UG
+Lycopene,0,UG,
+Lutein + zeaxanthin,0,UG,
+Vitamin C, total ascorbic acid,0,MG
+Thiamin,0.456,MG,
+Riboflavin,0.294,MG,
+Niacin,4.58,MG,
+Vitamin B-6,0.12,MG,
+Folate, total,73,UG
+Vitamin B-12,0.14,UG,
+Choline, total,12.2,MG
+Vitamin K (phylloquinone),3.9,UG,
+Folic acid,46,UG,
+Folate, food,27,UG
+Folate, DFE,106,UG
+Vitamin E, added,0,MG
+Vitamin B-12, added,0,UG
+Cholesterol,14,MG,
+Fatty acids, total saturated,11.8,G
+SFA 4:0,0.003,G,
+SFA 6:0,0.027,G,
+SFA 8:0,0.32,G,
+SFA 10:0,0.26,G,
+SFA 12:0,2.82,G,
+SFA 14:0,0.97,G,
+SFA 16:0,4.26,G,
+SFA 18:0,3.04,G,
+MUFA 18:1,3.98,G,
+PUFA 18:2,2.42,G,
+PUFA 18:3,0.208,G,
+PUFA 20:4,0.025,G,
+PUFA 22:6 n-3 (DHA),0.001,G,
+MUFA 16:1,0.108,G,
+PUFA 18:4,0,G,
+MUFA 20:1,0.052,G,
+PUFA 2:5 n-3 (EPA),0.001,G,
+MUFA 22:1,0.001,G,
+PUFA 22:5 n-3 (DPA),0.003,G,
+Fatty acids, total monounsaturated,4.16,G
+Fatty acids, total polyunsaturated,2.7,G
