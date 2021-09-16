@@ -72,7 +72,7 @@ img:hover {
 
 .hero h2 {
   text-align: center;
-  color: white;
+  color: black;
   font-weight: 500;
   font-family: serif;
   flex-wrap: wrap;
@@ -84,7 +84,7 @@ img:hover {
 
 .hero h3 {
   text-align: center;
-  color: white;
+  color: black;
   font-family: serif;
   flex-wrap: wrap;
   /* width: 36%;
