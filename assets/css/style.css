@@ -28,7 +28,6 @@ header h1 {
 header a {
     text-decoration: none;
     color: white;
-
 }
 
 header nav ul {
@@ -63,7 +62,6 @@ img:hover {
 a:hover {
   color:peachpuff;
 }
-
 
 
 /* Add hero here */
@@ -261,4 +259,35 @@ body {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* contact pagestyling */
+.contact-container{
+  background-color: #bab66f;
+  margin: 0;
+  width: 100%;
+}
+.left{
+  margin: 0;
+  padding: 25px 25px 25px 35px;
+  background-color: #bab66f;
+  width: 50%;
+}
+
+.left p{
+  padding: 0 0 0 25px;
+}
+
+.left ul{
+  padding: 0 0 0 45px;
+}
+
+.left a {
+  color: darkolivegreen;
+}
+
+.right{
+  height: 100%;
+  background-color: #bab66f;
+  padding: 25px 25px 25px 35px;
 }
