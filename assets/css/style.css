@@ -114,8 +114,14 @@ body {
 }
 
 .search-header {
+  display: flex;
+  justify-content: center;
   text-align: center;
   margin: 0 auto
+}
+
+.search-header input{
+  width: 250px
 }
 
 .btn {
@@ -195,6 +201,7 @@ body {
     border: none;
     width: 25%;
     outline: none;
+    
   }
 
   .pop-ingredient{
@@ -238,6 +245,7 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  text-align: center;
 }
 
 /* The Close Button */

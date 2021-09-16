@@ -143,6 +143,7 @@ var formSubmitHandler = function(event){
         ingredientInputEl.value = "";
     // if ingredient name is blank, alert user
     } else {
+        ingredientInputEl.blur();
         modal.style.display = "block";
             // alert("Please enter an ingredient username");
 
@@ -169,9 +170,10 @@ var form2SubmitHandler = function(event){
         }
 
         // clear the search field 
-        ingredientInputEl.value = "";
+        ingredientInput2El.value = "";
     // if ingredient name is blank, alert user
     } else {
+        ingredientInput2El.blur()
         modal.style.display = "block";
             // alert("Please enter an ingredient.");
 
