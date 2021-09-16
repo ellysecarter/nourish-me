@@ -28,12 +28,10 @@
 
 
 <!-- title and nav bar -->
-<body >
-  <header>
-    <h1 class="name">
-      <a href="/" style="text-decoration: none">
-        nourishMe
-  </h1>
+<body class="flex-column min-100-vh">
+    <header class="header">
+    <h1 class="app-title"><i class="fa-solid fa-user-chef"></i><a href="https://ellysecarter.github.io/nourish-me/"> nourish<b>Me</b></a></h1>
+   
     <nav>
       <!-- Unordered list element -->
       <ul>
@@ -57,7 +55,8 @@
 
 <main class="search ">
 
-    <div class="container">
+    <!-- left side -->
+    <div class="container contact-container">
         <div class="row">
             <div class="medium-6 columns left">
     
@@ -96,11 +95,12 @@
             <li>
                 <a href="https://fdc.nal.usda.gov/api-guide.html" target="_blank">FCD API</a>
             </li>
+        </ul>
         </div>
 
 
         <!-- contact form -->
-        <div class="medium-6 columns">
+        <div class="medium-6 columns right">
         <h2>Contact Us</h2>
           <label>Name
             <input type="text" placeholder="Name">
@@ -112,7 +112,7 @@
             Message
             <textarea placeholder="Send us a message!"></textarea>
           </label>
-          <input type="submit" class="button expanded" value="Submit">
+          <input type="submit" class="button expanded" value="Submit"  style="background-color:darkolivegreen">
         </div>
     </div>
     </div>

@@ -28,6 +28,7 @@ function setIngredientFromURL() {
     ingredientName = queryString.split("=")[1];
     if (ingredientName){
         ingredientName = ingredientName.replace("%20", " ");
+
         getIngredientInfo(ingredientName);
         if (localStorage.getItem("ingredientsArray")){
             ingredientsArray = JSON.parse(localStorage.getItem("ingredientsArray"));
@@ -63,7 +64,7 @@ var getIngredientInfo = function(ingredient) {
                 // set the ingredient description text
                 descriptionEl.textContent = data.foods[0].description;
                 // set the recipe search link for this ingredient
-                recipeLinkEl.innerHTML = "<a href='./recipes.html#" + ingredient + "'>" + ingredient+ "</a>";
+                recipeLinkEl.innerHTML = "<a href='./recipes.html?ingredient_name=" + ingredient + "'>" + ingredient+ "</a>";
                 //display the nutrients info data
                 for (var i = 0; i < data.foods[0].foodNutrients.length; i++){ 
                     //create a new row of nutrient info consisting of nutrient name, amount and unit
@@ -98,20 +99,19 @@ var getIngredientInfo = function(ingredient) {
                     nutrientRowEL.appendChild(nutrientAmountEl);
                     nutrientRowEL.appendChild(nutrientUnitEl);
 
-                    //
+                    //alternate background color on everyone other row
                     if ((i % 2) == 1){
                         nutrientRowEL.style.backgroundColor = "lightgray";
                     }
                     //add new nutrient row element to nutrient contianer
                     nutritionContainerEl.appendChild(nutrientRowEL);
 
-
                 }
+                showSearchSection ()
                 // go to the nutrients anchor
                 window.location.href = "#nutrients-anchor";
                 //reset the recent searches buttons
                 displayRecentSearches();
-           
 
             });
         }else {
@@ -121,12 +121,11 @@ var getIngredientInfo = function(ingredient) {
 };
 
 var formSubmitHandler = function(event){
-
     event.preventDefault();
     // get value from input element
     ingredientName = ingredientInputEl.value.trim();
     // if the ingredient name exist, get the nutrient information and add ingedrient name to localstorage
-    
+
     if (ingredientName) {
         getIngredientInfo(ingredientName);
         if (localStorage.getItem("ingredientsArray")){
@@ -144,14 +143,15 @@ var formSubmitHandler = function(event){
         ingredientInputEl.value = "";
     // if ingredient name is blank, alert user
     } else {
-            alert("Please enter an ingredient username");
+        ingredientInputEl.blur();
+        modal.style.display = "block";
+            // alert("Please enter an ingredient username");
 
     }
 
 };
 
 var form2SubmitHandler = function(event){
-
     event.preventDefault();
     // get value from input element
     ingredientName = ingredientInput2El.value.trim();
@@ -170,10 +170,12 @@ var form2SubmitHandler = function(event){
         }
 
         // clear the search field 
-        ingredientInputEl.value = "";
+        ingredientInput2El.value = "";
     // if ingredient name is blank, alert user
     } else {
-            alert("Please enter an ingredient.");
+        ingredientInput2El.blur()
+        modal.style.display = "block";
+            // alert("Please enter an ingredient.");
 
     }
 
@@ -233,6 +235,25 @@ function clearNutrientsTable (){
 function clearSavedRecipes() {
     localStorage.setItem("ingredientsArray",  "");
     displayRecentSearches();
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 searchFormEl.addEventListener("submit", form2SubmitHandler);
