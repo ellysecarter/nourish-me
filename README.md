@@ -2,7 +2,7 @@
 
 ## Let's get healthy!
 
-### A site that not only gives you the recipes, but provides the nutritional breakdown of each ingredient.
+### A site that not only gives you the recipe, but provides the nutritional breakdown of each ingredient.
 
 ![screenshot](assets/images/screenshot2.png)
 
