@@ -99,20 +99,19 @@ var getIngredientInfo = function(ingredient) {
                     nutrientRowEL.appendChild(nutrientAmountEl);
                     nutrientRowEL.appendChild(nutrientUnitEl);
 
-                    //
+                    //alternate background color on everyone other row
                     if ((i % 2) == 1){
                         nutrientRowEL.style.backgroundColor = "lightgray";
                     }
                     //add new nutrient row element to nutrient contianer
                     nutritionContainerEl.appendChild(nutrientRowEL);
 
-
                 }
+                showSearchSection ()
                 // go to the nutrients anchor
                 window.location.href = "#nutrients-anchor";
                 //reset the recent searches buttons
                 displayRecentSearches();
-           
 
             });
         }else {
