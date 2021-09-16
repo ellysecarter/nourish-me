@@ -32,6 +32,8 @@ https://ellysecarter.github.io/nourish-me/
 * [Emma-Jane Hobden](https://unsplash.com/@emmalejane)
 * [Nadine Primeau](https://unsplash.com/@nadineprimeau)
 * [Disiana Caballero](https://unsplash.com/@disi_03) 
+* [S O C I A L . C U T](https://unsplash.com/@socialcut)
+* [Kristine Tumanyan](https://unsplash.com/@krstne)
 
 
 ## Contributors
