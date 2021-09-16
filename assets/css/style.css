@@ -2,8 +2,8 @@
 
 /* apply styles to <header> */
 header {
-    padding: 10px 35px;
-    font-size: 20px;
+    padding: 10px 25px;
+    font-size: 18px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -41,7 +41,7 @@ header nav ul {
 
 header nav ul li a {
   padding: 10px 15px;
-  color: #white;
+  color: white;
   font-size: 1.55vw;
 }
 
@@ -61,29 +61,35 @@ img:hover {
 
 /* Add hero here */
 
-.hero {
-  background-image: url(https://cdn-bogbo.nitrocdn.com/jtNZXqDzeVwdJtUEObArjKeyjfDHZTKd/assets/static/optimized/rev-12b8463/wp-content/uploads/2020/05/ausfreshfarmers1280by500_empty_Updateupdate.jpg);
-  padding: 130px;
+.homeimage {
+    display: block;
+    text-align: center;
+    display: flex;
+    background-color: cornsilk;
+    justify-content: space-between;
+
 }
 
 .hero h2 {
   text-align: center;
-  color: cornsilk;
+  color: white;
+  font-weight: 500;
   font-family: serif;
   flex-wrap: wrap;
-  width: 36%;
-  margin-left: 34%;
-  font-size: 18px;
+  /* width: 36%;
+  margin-left: 34%; */
+  font-size: 20px;
 }
 
 .hero h3 {
   text-align: center;
-  color: cornsilk;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-family: serif;
   flex-wrap: wrap;
-  width: 36%;
-  margin-left: 34%;
-  font-size: 12px;
+  /* width: 36%;
+  margin-left: 34%; */
+  font-size: 24px;
+  font-weight: bolder;
 }
 
 /* body */

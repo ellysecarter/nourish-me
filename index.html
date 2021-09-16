@@ -1,85 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
-    <!-- Compressed CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css"
-        integrity="sha512-ctORkoJVPIlLQR5Kfr4h64mf98Xvdg7h4G2tKAjxBB+r6ppH6QwR8w7lhYqWqjRRCOBW3O4FfEDfeoTeSXahxA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        referrerpolicy="no-referrer"></script>
-    <!-- Compressed JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"
-        integrity="sha512-1XE+nYLbk5rG30etD2aFFpoJuLs/rWsKV/axKpsuhhkkFd4ljTYxa80U1NNskyyO3VPnIyqrR7PvbbFA4KjKmA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/js/recipeScript.js"></script>
-    <title>Nourish Me</title>
-  </head>
+   <!-- Compressed CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css"
+   integrity="sha512-ctORkoJVPIlLQR5Kfr4h64mf98Xvdg7h4G2tKAjxBB+r6ppH6QwR8w7lhYqWqjRRCOBW3O4FfEDfeoTeSXahxA=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+   referrerpolicy="no-referrer"></script>
+<!-- Compressed JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"
+   integrity="sha512-1XE+nYLbk5rG30etD2aFFpoJuLs/rWsKV/axKpsuhhkkFd4ljTYxa80U1NNskyyO3VPnIyqrR7PvbbFA4KjKmA=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <title>Nourish Me</title>
+</head>
 
 
 <!-- title and nav bar -->
-<body class="flex-column min-100-vh">
-  <header class="header">
-    <h1 class="app-title"><i class="fa-solid fa-user-chef"></i><a href="https://ellysecarter.github.io/nourish-me/"> nourishMe</a></h1>
-   
+<body >
+  <header>
+    <h1 class="name">
+      <!-- <img src="./assets/images/avatar.jpeg" alt="Wendy Nguyen" style="vertical-align:middle"> -->
+      <a href="/" style="text-decoration: none">
+        nourishMe
+  </h1>
     <nav>
-        <ul>
-            <li>
-                <a href="./index.html">Home</a>
-            </li>
-            <li>
-                <a href="./recipes.html">Recipes</a>
-            </li>
-            <li>
-                <a href="./ingredients.html">Ingredients</a>
-            </li>
-            <li>
-                <a href="./contact.html">Contact</a>
-            </li>
-        </ul>
+      <!-- Unordered list element -->
+      <ul>
+        <!-- List item element-->
+        <li>
+          <!-- Anchor element -->
+          <a href="./index.html">home</a>
+        </li>
+        <li>
+          <a href="./recipes.html">recipes</a>
+        </li>
+        <li>
+          <a href="./ingredients.html">ingredients</a>
+        </li>
+        <li>
+          <a href="./contact.html">contact</a>
+        </li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<!-- hero -->
-<section class="hero">
+<main class="search ">
+
+  <section class="hero">
     <div class="hero-cta">
         <h2>
             Looking for a recipe is easy, but finding out the nutritional content of each ingredient in the recipe can be tedious and daunting. 
         
             <br>
-            <h2>nourishMe got you covered!</h2> 
-            <h3>It's quick and easy!</h3>
-            <h3>Search a recipe or food item below and we'll do the rest.</h3>
+            <h2>With nourishMe, you can either search by entire dish or a single ingredient.</h2>
+            <br>
+            <h2>Once you get your recipe, you can then select each ingredient to get the entire nutritional value of each item, and the best part is ... </h2>
+            <h2>all your searches are saved! </h2>
+            <br>
+            <h3>Search a recipe or food item below and we'll do the rest!</h3>
 
         </h2>
     </div>
 </section>
 
-<main class="flex-row search">
-  <div class="col-12">
-    <div class="card">
-      <h3 class="card-header text-uppercase">Search By Dish or Food Item</h3>
-      <input id="searchText" aria-label="search-field">
-      <button id="nameSearch">Search by Name</button>
-      <button id="ingredientSearch">Search by Ingredient</button>
-    </div>
+
+<section class="homeimage">
+<div class="row homeimage">
+
+  <div class="columns medium-6">
+    <article>
+      <a href="./recipes.html">
+      <img src="./assets/images/recipes.jpeg" alt="" /></a>
+      <div>
+        <h4>RECIPES</h4>
+        </div>
+    </article>
   </div>
+  <div class="columns medium-6">
+    <article>
+      <a href="./ingredients.html">
+      <img src="./assets/images/ingredients.jpeg" alt="" /></a>
+      <div>
+        <h4>INGREDIENTS</h4>
+      </div>
+    </article>
+  </div>
+</div>
+</section>
+
+<footer>
+  Ⓒ DEJSW Studio 2021
+</footer>
 </main>
 
-  <footer>
-    Ⓒ DEJSW Studio 2021
-  </footer>
 
-  <script src="./assets/js/homepage.js"></script>
+
+
+<script src="./assets/js/ingredients.js"></script>
 </body>
 
 </html>
