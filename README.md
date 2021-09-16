@@ -15,7 +15,7 @@ https://ellysecarter.github.io/nourish-me/
 * [Images](#stock-images-provided-by)
 * [Contributors](#contributors)
 
-<a name="tech"/>
+
 
 ## Technologies Used
 * HTML
