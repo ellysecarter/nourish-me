@@ -1,34 +1,53 @@
-# Nourish Me
+# nourishMe 
 
-#### This is a site made by HTML, CSS, JavaScript, Bootstrap, Moment, and jQuery 
+## Let's get healthy!
 
-## Description
+### A site that not only gives you the recipes, but provides the nutritional breakdown of each ingredient.
 
-This website uses two Web API's that fetch recipes after you search for a dish or food item and also provides the nutritional value of each food item in the recipe once it is clicked. 
+![screenshot](assets/images/screenshot2.png)
 
-It also saves your search history which can be found in your console log. It displays the recently searched recipes on the left side of the screen to be easily accessed while on the site.
-
-
-## Live site 
+## Deployed application:
 https://ellysecarter.github.io/nourish-me/ 
 
-## Known Bugs
-None known
+## Table of Contents
+* [Technologies used](#technologies-used)
+* [Features](#features)
+* [Images](#stock-images-provided-by)
+* [Contributors](#contributors)
+
 
 
 ## Technologies Used
 * HTML
 * CSS
 * JavaScript
-* Moment
+* Foundation
 * jQuery
-
-## Contributors and Github profiles
-* Wendy Nguyen https://github.com/wendyqnguyen 
-* Dimitrius M. Brown https://github.com/TheMagnificentDOMB
-* Ellyse Carter https://github.com/ellysecarter 
-* Sean Hool https://github.com/HoolSeanalan 
-* Josue Santos-Aguilera https://github.com/ok-josue/ 
+* [Spoonacular API](https://spoonacular.com/food-api)
+* [FCD API](https://fdc.nal.usda.gov/api-guide.html) 
 
 
-![screenshot](assets/images/screenshot.png)
+## Features
+* Search by dish or single ingredient on recipes page
+* A list of ingredients will populate as well as a link to a full recipe 
+* Each ingredient on the recipe's page can be clicked which will bring you to the ingredients page
+* Ingredients page will provide description, serving size, and full nutritional breakdown of the ingredient
+* Recent searches will be saved on both recipe and ingredient page
+* You can clear your recent searches
+
+
+## Stock images provided by:
+* [sunorwind](https://unsplash.com/@sunorwind)
+* [Emma-Jane Hobden](https://unsplash.com/@emmalejane)
+* [Nadine Primeau](https://unsplash.com/@nadineprimeau)
+* [Disiana Caballero](https://unsplash.com/@disi_03) 
+* [S O C I A L . C U T](https://unsplash.com/@socialcut)
+* [Kristine Tumanyan](https://unsplash.com/@krstne)
+
+
+## Contributors
+* Wendy Nguyen [@wendyqnguyen](https://github.com/wendyqnguyen) 
+* Dimitrius M. Brown [@TheMagnificentDOMB](https://github.com/TheMagnificentDOMB)
+* Ellyse Carter [@ellysecarter](https://github.com/ellysecarter)
+* Sean Hool [@HoolSeanalan](https://github.com/HoolSeanalan) 
+* Josue Santos-Aguilera [@ok-josue](https://github.com/ok-josue) 
