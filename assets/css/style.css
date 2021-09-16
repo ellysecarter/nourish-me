@@ -74,7 +74,7 @@ img:hover {
   text-align: center;
   color: black;
   font-weight: 500;
-  font-family: serif;
+  font-family: Helvetica;
   flex-wrap: wrap;
   /* width: 36%;
   margin-left: 34%; */
@@ -85,7 +85,7 @@ img:hover {
 .hero h3 {
   text-align: center;
   color: black;
-  font-family: serif;
+  font-family: Arial, Helvetica, sans-serif;
   flex-wrap: wrap;
   /* width: 36%;
   margin-left: 34%; */
@@ -209,10 +209,7 @@ body {
 
 /* contact page */
 .left {
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
-/* recipes pages */
 
