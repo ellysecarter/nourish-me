@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+   <!-- Compressed CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css"
+   integrity="sha512-ctORkoJVPIlLQR5Kfr4h64mf98Xvdg7h4G2tKAjxBB+r6ppH6QwR8w7lhYqWqjRRCOBW3O4FfEDfeoTeSXahxA=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+   referrerpolicy="no-referrer"></script>
+  <!-- Compressed JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"
+   integrity="sha512-1XE+nYLbk5rG30etD2aFFpoJuLs/rWsKV/axKpsuhhkkFd4ljTYxa80U1NNskyyO3VPnIyqrR7PvbbFA4KjKmA=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/recipeScript.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <title>Nourish Me-Recipes</title>
+</head>
+
+
+<!-- title and nav bar -->
+<body >
+  <header>
+    <h1 class="name">
+      <a href="./index.html" style="text-decoration: none">
+        nourish<b>Me</b>
+    </h1>
+    <nav>
+      <!-- Unordered list element -->
+      <ul>
+        <!-- List item element-->
+        <li>
+          <!-- Anchor element -->
+          <a href="./index.html">Home</a>
+        </li>
+        <li>
+          <a href="./recipes.html">Recipes</a>
+        </li>
+        <li>
+          <a href="./ingredients.html">Ingredients</a>
+        </li>
+        <li>
+          <a href="./contact.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--
+  <main class="flex-row search">
+    <div class="col-12">
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By Dish or Food Item</h3>
+        <input id="searchText" aria-label="search-field">
+        <button id="nameSearch">Search by Name</button>
+        <button id="ingredientSearch">Search by Ingredient</button>
+      </div>
+    </div>
+  -->
+
+
+    <!--fields used by functions to display information-->
+  <!--
+    <div id="title"></div>
+    <div id="servings"></div> <br>
+    <button id="searchClear">Clear Recent Searches</button> <br>
+    <div id="recentSearches"></div>
+    <div id="ingredients"></div> <br>
+    <div id="instructions"></div> <br>
+    <a href="" id="sourceLink"></a>
+  </main>
+  -->
+
+  <main class="search">
+    <div class="row search-header">
+      <form id="search-header">
+        <b>Recipes</b><br>
+        <input name="recipe1" id="searchText" type="text" placeholder="Find a recipe" class="form-input" onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Find a recipe'"/>
+        <button id="nameSearch">Search by Name</button> <br>
+        <button id="ingredientSearch">Search by Ingredient</button>
+      </form>
+    </div>
+
+    <div class="popular-header">
+      <b>Click an image to find a recipe</b> <br>
+      <b>for one of these popular ingredients!</b>
+    </div>
+    <section class="popular">
+      <div class="row" id="popular-ingredients">
+        <div class="columns medium-3">
+          <article class="pop-ingredient">
+            <a href="https://ellysecarter.github.io/nourish-me/ingredients.html?ingredient_name=tomatoes">
+              <img src="./assets/images/tomatos.jpg" alt="plate of cut tomatoes" /></a>
+            <div class="ingredient-bio">
+              <h7 class="ingredient-macros">Tomatoes <br> 22	kcal | 3.84	g Carbs <br> 0.7	g Protein | 1	g Fiber</h4>
+            </div>
+          </article>
+        </div>
+        <div class="columns medium-3">
+          <article class="pop-ingredient">
+            <a href="https://ellysecarter.github.io/nourish-me/ingredients.html?ingredient_name=avocado">
+              <img src="./assets/images/avocado.jpg" alt="hand holding half an avocado" /></a>
+            <div class="ingredient-bio">
+              <h7 class="ingredient-macros">Avocado <br> 167	kcal | 8.64	g Carbs <br> 1.96	g Protein | 6.8	g Fiber</h8>
+            </div>
+          </article>
+        </div>
+        <div class="columns medium-3">
+          <article class="pop-ingredient">
+            <a href="https://ellysecarter.github.io/nourish-me/ingredients.html?ingredient_name=beets">
+              <img src="./assets/images/beets.jpg" alt="a raw bunch of red beets" /></a>
+            <div class="ingredient-bio">
+              <h7 class="ingredient-macros">Beets <br> 43	kcal | 9.56	g Carbs <br> 1.61	g Protein | 2.8	g Fiber</h4>
+            </div>
+          </article>
+        </div>
+        <div class="columns medium-3">
+          <article class="pop-ingredient">
+            <a href="https://ellysecarter.github.io/nourish-me/ingredients.html?ingredient_name=salmon%20fillet">
+              <img src="./assets/images/salmon.jpg" alt="raw salmon filet" /></a>
+            <div class="ingredient-bio">
+              <h7 class="ingredient-macros">Salmon <br> 131	kcal | 0	g Carbs <br> 22.2	g Protein | 0	g Fiber</h4>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div id="search-outer-container" class="search-outer-container" style="display: none;">
+      <div id="recipe-search"  class="search-container" >
+        <div class="columns medium-4">
+          <div>
+            <div class="card-body" id="recent-searches">
+              <button id="searchClear" class="btn-2">Clear Recent Searches</button> <br>
+              <div id="recentSearches"></div>
+            </div>
+          </div>
+        </div>
+        <div class="columns medium-8" style="background-color:cornsilk;">
+          <h2 id="title"></h2>
+          <h3 id="servings"></h3> <br>
+          <div id="ingredients"></div> <br>
+          <div id="instructions"></div> <br>
+          <a href="" id="sourceLink"></a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Ⓒ DEJSW Studio 2021
+    </footer>
+  </main>
+
+
+</body>
+
+
+</html>

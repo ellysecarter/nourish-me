@@ -1,0 +1,312 @@
+/* apply styles to <header> */
+header {
+    padding: 10px 25px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-position: 80%;
+    background-attachment: fixed;
+    z-index: 9999;
+    font-family: "Helvetica Neue";
+    background-color: black;
+}
+
+header h1 {
+    /* font-weight: bold; */
+    font-size: 35px;
+    color: #ffffff;
+    margin: 0;
+
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding-top: 15px;
+}
+
+header nav ul li a {
+  padding: 10px 15px;
+  color: white;
+  font-size: 1.55vw;
+}
+
+footer {
+  padding: 10px 35px;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  flex-wrap: wrap;
+  font-family: "Helvetica Neue";
+}
+
+img:hover {
+  opacity: 0.5;
+
+}
+
+a:hover {
+  color:white;
+}
+
+
+/* Add hero here */
+
+.homeimage {
+  display: block;
+  text-align: center;
+  display: flex;
+  background-color: cornsilk;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.hero h2 {
+  text-align: center;
+  color: black;
+  font-weight: 500;
+<<<<<<< HEAD
+  font-family: Helvetica;
+=======
+  font-family: "helvetica neue";
+>>>>>>> f0bbc1670d0f61f8ba18fb8450fcc81431d06d0b
+  flex-wrap: wrap;
+  /* width: 36%;
+  margin-left: 34%; */
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 0 auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: auto;
+}
+
+.hero h3 {
+  text-align: center;
+<<<<<<< HEAD
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+=======
+  color: white;
+  font-family: "helvetica neue";
+>>>>>>> f0bbc1670d0f61f8ba18fb8450fcc81431d06d0b
+  flex-wrap: wrap;
+  /* width: 36%;
+  margin-left: 34%; */
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+/* body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue";
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.search-header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto
+}
+
+.search-header input{
+  width: 250px;
+}
+
+.search-header button {
+  padding: 9.5px;
+  width: 250px;
+}
+
+.btn {
+  color: black;
+  background-color:olive;
+  width:100%;
+  border: none;
+  margin: 5px ;
+  padding: 5px 0 5px 0;
+  font-size: large;
+  border-radius: .25rem;
+}
+
+.btn-2 {
+  color:white;
+  background-color: darkolivegreen;
+  width:100%;
+  border: none;
+  margin: 5px ;
+  padding: 5px 0 5px 0;
+  font-size: large;
+  border-radius: .25rem;
+}
+
+
+.info-container {
+  margin: 5px 5px 25px 15px;
+
+}
+
+  .nutrient-table{
+    margin: 5px 5px 5px 5px;
+    padding: 15px 25px 15px 25px;
+    /* text-align: right; */
+  }
+
+  .popular{
+    display: flex;
+    background-color: cornsilk;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .popular-header{
+    background-color: cornsilk;
+    text-align: center;
+  }
+  .search{
+    display: block;
+    background-color:darkkhaki;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+  }
+
+  .search-outer-container{
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    background-color:darkkhaki;
+  }
+
+  .form-input{
+    margin-bottom: 5px;
+    border: none;
+    width: 25%;
+    outline: none;
+  }
+
+  .pop-ingredient{
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+
+  }
+
+  .card{
+    background-color: #bab66f;
+  }
+
+.search-container{
+  border: none;
+  background-color: #bab66f;
+  width: 80%;
+}
+.right-justify-text{
+  text-align: right;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  text-align: center;
+}
+
+<<<<<<< HEAD
+/* contact page */
+.left {
+  align-items: center;
+}
+
+
+=======
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* contact pagestyling */
+.contact-container{
+  background-color: #bab66f;
+  margin: 0;
+  width: 100%;
+}
+.left{
+  margin: 0;
+  padding: 25px 25px 25px 35px;
+  background-color: #bab66f;
+  width: 50%;
+}
+
+.left p{
+  padding: 0 0 0 25px;
+}
+
+.left ul{
+  padding: 0 0 0 45px;
+}
+
+.left a {
+  color: darkolivegreen;
+}
+
+.right{
+  height: 100%;
+  background-color: #bab66f;
+  padding: 25px 25px 25px 35px;
+}
+>>>>>>> f0bbc1670d0f61f8ba18fb8450fcc81431d06d0b
