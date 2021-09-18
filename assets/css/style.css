@@ -114,6 +114,7 @@ body {
   justify-content: center;
   text-align: center;
   margin: 0 auto
+  padding-bottom: 15px;
 }
 
 .search-header input{
@@ -175,7 +176,10 @@ body {
   .popular-header{
     background-color: cornsilk;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
+
   .search{
     display: block;
     background-color:darkkhaki;
