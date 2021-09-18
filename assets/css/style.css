@@ -75,9 +75,13 @@ a:hover {
 
 .hero h2 {
   text-align: center;
-  color: white;
+  color: black;
   font-weight: 500;
+<<<<<<< HEAD
+  font-family: Helvetica;
+=======
   font-family: "helvetica neue";
+>>>>>>> f0bbc1670d0f61f8ba18fb8450fcc81431d06d0b
   flex-wrap: wrap;
   /* width: 36%;
   margin-left: 34%; */
@@ -91,8 +95,13 @@ a:hover {
 
 .hero h3 {
   text-align: center;
+<<<<<<< HEAD
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+=======
   color: white;
   font-family: "helvetica neue";
+>>>>>>> f0bbc1670d0f61f8ba18fb8450fcc81431d06d0b
   flex-wrap: wrap;
   /* width: 36%;
   margin-left: 34%; */
