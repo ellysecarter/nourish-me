@@ -50,6 +50,7 @@ footer {
   color: white;
   flex-wrap: wrap;
   font-family: "Helvetica Neue";
+  flex-shrink: 0;
 }
 
 img:hover {
