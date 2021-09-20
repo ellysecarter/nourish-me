@@ -11,7 +11,8 @@ https://ellysecarter.github.io/nourish-me/
 
 ## Table of Contents
 * [Technologies used](#technologies-used)
-* [Features](#features)
+* [Features](#features'
+* [Known issues](#issues)
 * [Images](#stock-images-provided-by)
 * [Contributors](#contributors)
 
@@ -34,6 +35,10 @@ https://ellysecarter.github.io/nourish-me/
 * Ingredients page will provide description, serving size, and full nutritional breakdown of the ingredient
 * Recent searches will be saved on both recipe and ingredient page
 * You can clear your recent searches
+
+
+## Issues
+* Popular recipes and ingredients image links occasionally break
 
 
 ## Stock images provided by:
