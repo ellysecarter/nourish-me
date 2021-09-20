@@ -2,7 +2,7 @@
 
 ## Let's get healthy!
 
-### A site that not only gives you the recipes, but provides the nutritional breakdown of each ingredient.
+### A site that not only gives you the recipe, but provides the nutritional breakdown of each ingredient.
 
 ![screenshot](assets/images/screenshot2.png)
 
@@ -15,7 +15,6 @@ https://ellysecarter.github.io/nourish-me/
 * [Known issues](#issues)
 * [Images](#stock-images-provided-by)
 * [Contributors](#contributors)
-
 
 
 ## Technologies Used
@@ -35,6 +34,9 @@ https://ellysecarter.github.io/nourish-me/
 * Ingredients page will provide description, serving size, and full nutritional breakdown of the ingredient
 * Recent searches will be saved on both recipe and ingredient page
 * You can clear your recent searches
+
+## Known Bugs
+* Spoonacular has a daily quota of 150 API calls. If you search for a recipe and it does not populate a result, it is because we have hit our daily limit of 150 requests. 
 
 
 ## Issues
