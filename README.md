@@ -12,7 +12,7 @@ https://ellysecarter.github.io/nourish-me/
 ## Table of Contents
 * [Technologies used](#technologies-used)
 * [Features](#features)
-* [Known bugs](#known-bugs)
+* [Known issues](#issues)
 * [Images](#stock-images-provided-by)
 * [Contributors](#contributors)
 
@@ -37,6 +37,10 @@ https://ellysecarter.github.io/nourish-me/
 
 ## Known Bugs
 * Spoonacular has a daily quota of 150 API calls. If you search for a recipe and it does not populate a result, it is because we have hit our daily limit of 150 requests. 
+
+
+## Issues
+* Popular recipes and ingredients image links occasionally break
 
 
 ## Stock images provided by:

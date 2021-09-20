@@ -50,6 +50,7 @@ footer {
   color: white;
   flex-wrap: wrap;
   font-family: "Helvetica Neue";
+  flex-shrink: 0;
 }
 
 img:hover {
@@ -77,11 +78,7 @@ a:hover {
   text-align: center;
   color: black;
   font-weight: 500;
-<<<<<<< HEAD
-  font-family: Helvetica;
-=======
   font-family: "helvetica neue";
->>>>>>> f0bbc1670d0f61f8ba18fb8450fcc81431d06d0b
   flex-wrap: wrap;
   /* width: 36%;
   margin-left: 34%; */
@@ -95,13 +92,8 @@ a:hover {
 
 .hero h3 {
   text-align: center;
-<<<<<<< HEAD
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
-=======
   color: white;
   font-family: "helvetica neue";
->>>>>>> f0bbc1670d0f61f8ba18fb8450fcc81431d06d0b
   flex-wrap: wrap;
   /* width: 36%;
   margin-left: 34%; */
@@ -116,6 +108,9 @@ body {
   font-family: "Helvetica Neue";
   line-height: 1.5;
   font-size: 16px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .search-header {
@@ -123,6 +118,7 @@ body {
   justify-content: center;
   text-align: center;
   margin: 0 auto
+  padding-bottom: 15px;
 }
 
 .search-header input{
@@ -184,7 +180,10 @@ body {
   .popular-header{
     background-color: cornsilk;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
+
   .search{
     display: block;
     background-color:darkkhaki;
@@ -240,7 +239,7 @@ body {
   left: 0;
   top: 0;
   width: 100%; /* Full width */
-  height: 100%; /* Full height */
+ height: 100%;  /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -256,14 +255,6 @@ body {
   text-align: center;
 }
 
-<<<<<<< HEAD
-/* contact page */
-.left {
-  align-items: center;
-}
-
-
-=======
 /* The Close Button */
 .close {
   color: #aaa;
@@ -305,8 +296,7 @@ body {
 }
 
 .right{
-  height: 100%;
+  /* height: 100%; */
   background-color: #bab66f;
   padding: 25px 25px 25px 35px;
 }
->>>>>>> f0bbc1670d0f61f8ba18fb8450fcc81431d06d0b
