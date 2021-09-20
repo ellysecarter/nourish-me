@@ -11,7 +11,7 @@ https://ellysecarter.github.io/nourish-me/
 
 ## Table of Contents
 * [Technologies used](#technologies-used)
-* [Features](#features'
+* [Features](#features)
 * [Known issues](#issues)
 * [Images](#stock-images-provided-by)
 * [Contributors](#contributors)
